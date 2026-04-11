@@ -9,3 +9,11 @@ tsconfig.tsbuildinfo
 private/
 .replit
 replit.nix
+
+# Local utility scripts
+deploy.bat
+preview.bat
+
+# Build artifacts
+.temp_build/
+.quartz-cache/
