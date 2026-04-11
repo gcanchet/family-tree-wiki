@@ -1,0 +1,17 @@
+---
+tags: person
+generation_index: 2
+birth_date: 
+location: 
+source_date: 2025-05-22
+confidence_score: 1.0
+---
+# Koa
+
+## Genealogy
+- **Parents**: [[eng_chua]], [[po_cu]]
+- **Spouse**: [[tbd_gaw]]
+- **Children**: [[victor_gaw]]
+
+## Biographical Data
+Member of the second generation of the Chua family.

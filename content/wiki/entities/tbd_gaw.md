@@ -1,0 +1,16 @@
+---
+tags: person
+generation_index: 2
+birth_date: 
+location: 
+source_date: 2025-05-22
+confidence_score: 1.0
+---
+# TBD Gaw
+
+## Genealogy
+- **Spouse**: [[koa]]
+- **Children**: [[victor_gaw]]
+
+## Biographical Data
+Patriarch of the Gaw family branch.
