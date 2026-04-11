@@ -7,7 +7,6 @@ title: Wiki Index
 Welcome to our Family Tree Wiki! This is a collaborative space where we preserve our family history and connect our stories across generations. Feel free to explore the interactive graph on the right or search for specific relatives using the search bar.
 
 ## 📊 Visualization & Maintenance
- - [[wiki/outputs/rafael_lim_chart|Rafael Lim Branch Chart]]
  - [[log|Wiki Activity Log]]
  - [[gemini|Wiki Maintenance Schema]]
 
