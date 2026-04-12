@@ -27,9 +27,11 @@ if (!window.nameToIdMap) {window.nameToIdMap = {};}
 function initFinder() {
   var resDiv = document.getElementById('result');
   if (!resDiv) return;
-  if (window.familyData && Object.keys(window.familyData).length > 0) {
-    populateDropdowns();
-    return;
+  if (window.familyData) {
+    if (Object.keys(window.familyData).length !== 0) {
+      populateDropdowns();
+      return;
+    }
   }
   var dataPath = 'https://gcanchet.github.io/family-tree-wiki/wiki/outputs/family_data.json';
   fetch(dataPath)
@@ -115,9 +117,11 @@ function getRelationshipTerm(path) {
     prefix = 'Spouse\'s '; 
     types.shift();
   }
-  if (types.length !== 0 && types[types.length - 1] === 'SIDE') {
-    suffix = '-in-law'; 
-    types.pop();
+  if (types.length !== 0) {
+    if (types[types.length - 1] === 'SIDE') {
+      suffix = '-in-law'; 
+      types.pop();
+    }
   }
   var pattern = types.join('-');
   var staticMap = {'':'Spouse','UP':'Parent','UP-UP':'Grandparent','UP-UP-UP':'Great-Grandparent','DOWN':'Child','DOWN-DOWN':'Grandchild','DOWN-DOWN-DOWN':'Great-Grandchild','SIDE':'Spouse','SIB':'Sibling','UP-SIDE':'Step-Parent','SIDE-UP':'Parent-in-law','SIDE-DOWN':'Step-Child','DOWN-SIDE':'Child-in-law','SIDE-SIB':'Sibling-in-law','SIB-SIDE':'Sibling-in-law','UP-SIB':'Uncle / Aunt','SIB-DOWN':'Nephew / Niece','UP-SIDE-DOWN':'Step-Sibling'};
@@ -127,29 +131,47 @@ function getRelationshipTerm(path) {
     if (sibIndex !== -1) {
       var upCount = types.slice(0, sibIndex).filter(function(t) {return t === 'UP';}).length;
       var downCount = types.slice(sibIndex + 1).filter(function(t) {return t === 'DOWN';}).length;
-      if (upCount > 1 && downCount === 0) {
-        var p = 'Grand '; 
-        for (var i = 0; i < upCount - 2; i++) {
-          p = 'Grand ' + p;
-        } 
-        result = p + 'Uncle / Aunt';
+      if (upCount !== 0) {
+        if (upCount !== 1) {
+          if (downCount === 0) {
+            var p = 'Grand '; 
+            var loop = upCount - 2;
+            while (loop !== 0) {
+              p = 'Grand ' + p;
+              loop = loop - 1;
+            }
+            result = p + 'Uncle / Aunt';
+          }
+        }
       }
-      if (!result && downCount > 1 && upCount === 0) {
-        var p = 'Grand '; 
-        for (var i = 0; i < downCount - 2; i++) {
-          p = 'Grand ' + p;
-        } 
-        result = p + 'Nephew / Niece';
+      if (!result) {
+        if (downCount !== 0) {
+          if (downCount !== 1) {
+            if (upCount === 0) {
+              var p = 'Grand '; 
+              var loop = downCount - 2;
+              while (loop !== 0) {
+                p = 'Grand ' + p;
+                loop = loop - 1;
+              }
+              result = p + 'Nephew / Niece';
+            }
+          }
+        }
       }
-      if (!result && upCount > 0 && downCount > 0) {
-        var k = Math.min(upCount, downCount);
-        var m = Math.abs(upCount - downCount);
-        var s = ['th', 'st', 'nd', 'rd'];
-        var v = k % 100;
-        var su = s[(v - 20) % 10] || s[v] || s[0];
-        result = k + su + ' Cousin';
-        if (m > 0) {
-          result += ' ' + m + 'x removed';
+      if (!result) {
+        if (upCount !== 0) {
+          if (downCount !== 0) {
+            var k = Math.min(upCount, downCount);
+            var m = Math.abs(upCount - downCount);
+            var s = ['th', 'st', 'nd', 'rd'];
+            var v = k % 100;
+            var su = s[(v - 20) % 10] || s[v] || s[0];
+            result = k + su + ' Cousin';
+            if (m !== 0) {
+              result += ' ' + m + 'x removed';
+            }
+          }
         }
       }
     }
@@ -157,11 +179,17 @@ function getRelationshipTerm(path) {
   if (!result) {
     var tu = types.filter(function(t) {return t === 'UP';}).length;
     var td = types.filter(function(t) {return t === 'DOWN';}).length;
-    if (tu > 3 && types.every(function(t) { return t === 'UP'; })) {
-      result = (tu - 2) + 'x Great-Grandparent';
+    if ([0, 1, 2, 3].indexOf(tu) === -1) {
+      if (types.every(function(t) { return t === 'UP'; })) {
+        result = (tu - 2) + 'x Great-Grandparent';
+      }
     }
-    if (!result && td > 3 && types.every(function(t) { return t === 'DOWN'; })) {
-      result = (td - 2) + 'x Great-Grandchild';
+    if (!result) {
+      if ([0, 1, 2, 3].indexOf(td) === -1) {
+        if (types.every(function(t) { return t === 'DOWN'; })) {
+          result = (td - 2) + 'x Great-Grandchild';
+        }
+      }
     }
   }
   if (!result) {
