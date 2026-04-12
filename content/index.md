@@ -3,19 +3,8 @@ title: Wiki Index
 ---
 # Wiki Index
 
-## 👋 Welcome
-Welcome to our Family Tree Wiki! This is a collaborative space where we preserve our family history and connect our stories across generations. Feel free to explore the interactive graph on the right or search for specific relatives using the search bar.
-
-## 📊 Visualization & Maintenance
- - [[log|Wiki Activity Log]]
- - [[relationship_finder|Relationship Finder Tool]]
- - [[gemini|Wiki Maintenance Schema]]
-
-**Suggesting Changes:** To help keep our family records accurate, if you find any errors or would like to contribute new information, photos, or stories, the best way to do so is by opening an issue on our [GitHub repository](https://github.com/gcanchet/family-tree-wiki/issues) or by reaching out to the administrator directly. - greata
-
-## Sources
- - [[wiki/sources/family_tree|family_tree.csv]]
- - [[wiki/sources/family_tree_tsv|familyTreeTSV.tsv]]
+## 🧭 Navigation
+ - [[welcome|Welcome & Wiki Tools]]
 
 ## Entities
  - [[wiki/entities/aidan_ong|Aidan Ong]]
@@ -246,3 +235,7 @@ Welcome to our Family Tree Wiki! This is a collaborative space where we preserve
  - [[wiki/entities/yvette_1|Yvette Sy (1)]]
 ## Outputs
  - [[Health_Check_Report|Wiki Health Check Report (2026-04-11)]]
+
+## Sources
+ - [[wiki/sources/family_tree|family_tree.csv]]
+ - [[wiki/sources/family_tree_tsv|familyTreeTSV.tsv]]
