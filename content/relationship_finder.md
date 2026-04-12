@@ -25,14 +25,12 @@ button:hover { background: #2980b9; }
 if (!window.familyData) {window.familyData = {};}
 if (!window.nameToIdMap) {window.nameToIdMap = {};}
 function initFinder() {
-  var inputs = [document.getElementById('personA'), document.getElementById('personB')];
-  inputs.forEach(function(input) {
+  ['personA', 'personB'].forEach(function(id) {
+    var input = document.getElementById(id);
     if (!input) return;
     input.addEventListener('keydown', function(e) {
-      if (e && e.key && e.key.indexOf('Esc') === 0) {
-        e.stopPropagation();
-      }
-    }, true);
+      if (e && e.key && (e.key === 'Escape' || e.key === 'Esc')) e.stopPropagation();
+    });
   });
   var resDiv = document.getElementById('result');
   if (!resDiv) return;
@@ -58,16 +56,16 @@ function initFinder() {
 }
 function populateDropdowns() {
   var datalist = document.getElementById('peopleList');
-  if (!datalist) {
-    return;
-  }
+  if (!datalist || !window.familyData) return;
+  var keys = Object.keys(window.familyData);
+  if (keys.length === 0) return;
   datalist.innerHTML = '';
   window.nameToIdMap = {};
-  var sortedIds = Object.keys(window.familyData).sort(function(a, b) {
-    return window.familyData[a].name.localeCompare(window.familyData[b].name);
+  var sortedIds = keys.sort(function(a, b) {
+    return (window.familyData[a].name || "").localeCompare(window.familyData[b].name || "");
   });
   sortedIds.forEach(function(id) {
-    var name = window.familyData[id].name;
+    var name = window.familyData[id].name || id;
     window.nameToIdMap[name] = id;
     var opt = document.createElement('option');
     opt.value = name;
@@ -216,9 +214,10 @@ function displayPath(path) {
   var resDiv = document.getElementById('result');
   if (!resDiv) return;
   resDiv.innerHTML = '';
+  if (!path || path.length === 0) return;
   var term = getRelationshipTerm(path);
-  var startPerson = window.familyData[path[0].from].name;
-  var endPerson = window.familyData[path[path.length - 1].to].name;
+  var startPerson = (window.familyData[path[0].from] || {}).name || path[0].from;
+  var endPerson = (window.familyData[path[path.length - 1].to] || {}).name || path[path.length - 1].to;
   var title = document.createElement('h3');
   title.textContent = endPerson + ' is the ' + term + ' of ' + startPerson;
   resDiv.appendChild(title);
@@ -226,8 +225,8 @@ function displayPath(path) {
   pathTitle.textContent = 'Path:';
   resDiv.appendChild(pathTitle);
   path.forEach(function(step, i) {
-    var f = window.familyData[step.from] ? window.familyData[step.from].name : step.from;
-    var t = window.familyData[step.to] ? window.familyData[step.to].name : step.to;
+    var f = (window.familyData[step.from] || {}).name || step.from;
+    var t = (window.familyData[step.to] || {}).name || step.to;
     var span = document.createElement('span');
     span.className = 'path-step';
     span.textContent = (i + 1) + '. ' + f + ' ' + step.label + ' ' + t;
