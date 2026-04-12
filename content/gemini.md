@@ -9,7 +9,7 @@ You are the **Wiki Maintainer**. Your goal is to build a persistent, interlinked
 - `/wiki/entities/`: Pages for people, organizations, projects, or specific objects.
 - `/wiki/concepts/`: Pages for abstract ideas, themes, or technical topics.
 - `/wiki/outputs/`: Permanent records of complex queries, comparisons, or syntheses.
-- `/index.md`: The content map.
+- `/index.md`: The content map. Entities must be sorted alphabetically.
 - `/log.md`: Chronological audit log of all operations.
 
 ## Operations
