@@ -22,8 +22,8 @@ button:hover { background: #2980b9; }
 <div id="result">Results will appear here...</div>
 </div>
 <script type="text/javascript">
-if (!window.familyData) {window.familyData = {};}
-if (!window.nameToIdMap) {window.nameToIdMap = {};}
+window.familyData = window.familyData || {};
+window.nameToIdMap = window.nameToIdMap || {};
 function initFinder() {
   ['personA', 'personB'].forEach(function(id) {
     var input = document.getElementById(id);
@@ -38,13 +38,16 @@ function initFinder() {
   });
   var resDiv = document.getElementById('result');
   if (!resDiv) return;
-  if (window.familyData) {
-    if (Object.keys(window.familyData).length !== 0) {
-      populateDropdowns();
-      return;
-    }
+
+  if (window.familyData && Object.keys(window.familyData).length > 0) {
+    populateDropdowns();
+    return;
   }
-  var dataPath = 'https://gcanchet.github.io/family-tree-wiki/wiki/outputs/family_data.json';
+
+  var isGH = window.location.hostname.includes('github.io');
+  var base = isGH ? '/' + window.location.pathname.split('/')[1] : '';
+  var dataPath = base + '/wiki/outputs/family_data.json';
+
   fetch(dataPath)
     .then(function(response) {
       if (!response.ok) throw new Error('File not found');

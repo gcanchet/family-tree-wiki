@@ -197,3 +197,4 @@
 ## [2026-04-11] system | Fixed SyntaxError in Relationship Finder by expanding multi-statement lines and adding braces to conditional blocks.
 ## [2026-04-11] system | Implemented "escape-proof" JavaScript in Relationship Finder to resolve SyntaxErrors caused by Markdown character encoding (&&, <, >).
 ## [2026-04-11] system | Updated relationship_finder.md to use absolute GitHub URL and refactored dense JS logic to prevent parsing errors.
+## [2026-04-11] system | fix - Resolved autocomplete failure by implementing dynamic base-path detection for GitHub Pages and ensuring re-population on SPA navigation.
