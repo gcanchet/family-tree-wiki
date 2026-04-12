@@ -26,8 +26,8 @@ button:hover { background: #2980b9; }
 
 <script>
 // Use window-scoped variables to persist data across Quartz SPA transitions
-window.familyData = window.familyData || {};
-window.nameToIdMap = window.nameToIdMap || {};
+if (!window.familyData) { window.familyData = {}; }
+if (!window.nameToIdMap) { window.nameToIdMap = {}; }
 
 function initFinder() {
     console.log("Relationship Finder: Initializing tool...");
@@ -93,7 +93,7 @@ function findRelationship() {
     let queue = [[start, []]];
     let visited = new Set([start]);
 
-    while (queue.length > 0) {
+    while (queue.length !== 0) {
         let [currentId, path] = queue.shift();
         if (currentId === end) {
             displayPath(path);
@@ -102,10 +102,10 @@ function findRelationship() {
         const person = window.familyData[currentId];
         if (!person) continue;
         const connections = [
-            ...(person.parents || []).map(id => ({id, rel: "is the child of", type: "UP"})),
-            ...(person.children || []).map(id => ({id, rel: "is the parent of", type: "DOWN"})),
-            ...(person.spouse || []).map(id => ({id, rel: "is the spouse of", type: "SIDE"})),
-            ...(person.siblings || []).map(id => ({id, rel: "is the sibling of", type: "SIB"}))
+            ...(person.parents ? person.parents : []).map(id => ({id, rel: "is the child of", type: "UP"})),
+            ...(person.children ? person.children : []).map(id => ({id, rel: "is the parent of", type: "DOWN"})),
+            ...(person.spouse ? person.spouse : []).map(id => ({id, rel: "is the spouse of", type: "SIDE"})),
+            ...(person.siblings ? person.siblings : []).map(id => ({id, rel: "is the sibling of", type: "SIB"}))
         ];
         for (let conn of connections) {
             if (!visited.has(conn.id)) {
@@ -136,32 +136,46 @@ function getRelationshipTerm(path) {
         'SIB-SIDE': 'Sibling-in-law', 'UP-SIB': 'Uncle / Aunt', 'SIB-DOWN': 'Nephew / Niece',
         'UP-SIDE-DOWN': 'Step-Sibling'
     };
-    let result = staticMap[pattern] || null;
+    let result = staticMap[pattern];
+    if (!result) { result = null; }
     const sibIndex = types.indexOf('SIB');
     if (!result) {
         if (sibIndex !== -1) {
             const upCount = types.slice(0, sibIndex).filter(t => t === 'UP').length;
             const downCount = types.slice(sibIndex + 1).filter(t => t === 'DOWN').length;
-            if (upCount > 1) {
+            if (Math.sign(upCount - 1) === 1) {
                 if (downCount === 0) {
-                    let p = "Grand "; for (let i = 0; i < upCount - 2; i++) p = "Great-" + p;
+                    let p = "Grand "; 
+                    Array.from({length: upCount - 2}).forEach(function() { 
+                        p = "Grand " + p; 
+                    });
                     result = p + "Uncle / Aunt";
                 }
             }
             if (!result) {
-                if (downCount > 1) {
+                if (Math.sign(downCount - 1) === 1) {
                     if (upCount === 0) {
-                        let p = "Grand "; for (let i = 0; i < downCount - 2; i++) p = "Great-" + p;
+                        let p = "Grand "; 
+                        Array.from({length: downCount - 2}).forEach(function() { 
+                            p = "Grand " + p; 
+                        });
                         result = p + "Nephew / Niece";
                     }
                 }
             }
             if (!result) {
-                if (upCount > 0) {
-                    if (downCount > 0) {
+                if (Math.sign(upCount) === 1) {
+                    if (Math.sign(downCount) === 1) {
                         const k = Math.min(upCount, downCount), m = Math.abs(upCount - downCount);
-                        const getOrdinal = (n) => { const s = ["th", "st", "nd", "rd"], v = n % 100; return n + (s[(v - 20) % 10] || s[v] || s[0]); };
-                        result = `${getOrdinal(k)} Cousin`; if (m > 0) result += ` ${m}x removed`;
+                        const getOrdinal = (n) => { 
+                            const s = ["th", "st", "nd", "rd"], v = n % 100; 
+                            let suffix = s[(v - 20) % 10];
+                            if (!suffix) { suffix = s[v]; }
+                            if (!suffix) { suffix = s[0]; }
+                            return n + suffix; 
+                        };
+                        result = `${getOrdinal(k)} Cousin`; 
+                        if (Math.sign(m) === 1) { result += ` ${m}x removed`; }
                     }
                 }
             }
@@ -170,12 +184,16 @@ function getRelationshipTerm(path) {
     if (!result) {
         const totalUps = types.filter(t => t === 'UP').length;
         const totalDowns = types.filter(t => t === 'DOWN').length;
-        if (totalUps > 3) {
-            if (types.every(t => t === 'UP')) result = `${totalUps - 2}x Great-Grandparent`;
+        if (Math.sign(totalUps - 3) === 1) {
+            if (types.every(function(t) { return t === 'UP'; })) {
+                result = `${totalUps - 2}x Great-Grandparent`;
+            }
         }
         if (!result) {
-            if (totalDowns > 3) {
-                if (types.every(t => t === 'DOWN')) result = `${totalDowns - 2}x Great-Grandchild`;
+            if (Math.sign(totalDowns - 3) === 1) {
+                if (types.every(function(t) { return t === 'DOWN'; })) {
+                    result = `${totalDowns - 2}x Great-Grandchild`;
+                }
             }
         }
     }
