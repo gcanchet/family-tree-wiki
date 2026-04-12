@@ -25,25 +25,40 @@ button:hover { background: #2980b9; }
 </div>
 
 <script>
-let familyData = {};
-let nameToIdMap = {};
+// Use window-scoped variables to persist data across Quartz SPA transitions
+window.familyData = window.familyData || {};
+window.nameToIdMap = window.nameToIdMap || {};
 
 function initFinder() {
+    console.log("Relationship Finder: Initializing tool...");
     const resDiv = document.getElementById('result');
-    // Using a relative path makes it work locally and on GitHub Pages
-    fetch('wiki/outputs/family_data.json')
+    if (!resDiv) return;
+
+    // If data is already loaded in the window scope, just repopulate the dropdowns
+    if (Object.keys(window.familyData).length > 0) {
+        populateDropdowns();
+        return;
+    }
+
+    // Dynamically resolve path for Local Dev vs GitHub Pages
+    const isGitHub = window.location.hostname.includes('github.io');
+    const dataPath = (isGitHub ? '/family-tree-wiki' : '') + '/wiki/outputs/family_data.json';
+
+    console.log("Relationship Finder: Fetching data from", dataPath);
+    fetch(dataPath)
         .then(response => {
-            if (!response.ok) throw new Error("File not found");
+            if (!response.ok) throw new Error("JSON file not found at " + dataPath);
             return response.json();
         })
         .then(data => {
-            familyData = data;
+            window.familyData = data;
+            console.log("Relationship Finder: Data loaded successfully.");
             populateDropdowns();
         })
         .catch(err => {
-            console.error("Data load failed:", err);
+            console.error("Relationship Finder: Error:", err);
             if (resDiv) {
-                resDiv.innerHTML = "Error: Could not load family data. Ensure Action [1] (family_processor.py) has been run and the file is published.";
+                resDiv.innerHTML = "Error loading family data. Ensure the processing script was run and the site is fully deployed.";
             }
         });
 }
@@ -52,13 +67,13 @@ function populateDropdowns() {
     const datalist = document.getElementById('peopleList');
     if (!datalist) return;
     datalist.innerHTML = '';
-    nameToIdMap = {};
+    window.nameToIdMap = {};
 
-    const sortedIds = Object.keys(familyData).sort((a, b) => familyData[a].name.localeCompare(familyData[b].name));
+    const sortedIds = Object.keys(window.familyData).sort((a, b) => window.familyData[a].name.localeCompare(window.familyData[b].name));
     
     sortedIds.forEach(id => {
-        const name = familyData[id].name;
-        nameToIdMap[name] = id;
+        const name = window.familyData[id].name;
+        window.nameToIdMap[name] = id;
         const opt = document.createElement('option');
         opt.value = name;
         datalist.appendChild(opt);
@@ -68,8 +83,8 @@ function populateDropdowns() {
 function findRelationship() {
     const nameA = document.getElementById('personA').value;
     const nameB = document.getElementById('personB').value;
-    const start = nameToIdMap[nameA];
-    const end = nameToIdMap[nameB];
+    const start = window.nameToIdMap[nameA];
+    const end = window.nameToIdMap[nameB];
     const resDiv = document.getElementById('result');
 
     if (!start || !end) { resDiv.innerHTML = "Please select valid names from the list."; return; }
@@ -84,7 +99,7 @@ function findRelationship() {
             displayPath(path);
             return;
         }
-        const person = familyData[currentId];
+        const person = window.familyData[currentId];
         if (!person) continue;
         const connections = [
             ...(person.parents || []).map(id => ({id, rel: "is the child of", type: "UP"})),
@@ -93,7 +108,7 @@ function findRelationship() {
             ...(person.siblings || []).map(id => ({id, rel: "is the sibling of", type: "SIB"}))
         ];
         for (let conn of connections) {
-            if (!visited.has(conn.id) && familyData[conn.id]) {
+            if (!visited.has(conn.id) && window.familyData[conn.id]) {
                 visited.add(conn.id);
                 queue.push([conn.id, [...path, {from: currentId, to: conn.id, label: conn.rel, type: conn.type}]]);
             }
@@ -147,22 +162,23 @@ function getRelationshipTerm(path) {
 
 function displayPath(path) {
     const term = getRelationshipTerm(path);
-    const startPerson = familyData[path[0].from].name;
-    const endPerson = familyData[path[path.length - 1].to].name;
+    const startPerson = window.familyData[path[0].from].name;
+    const endPerson = window.familyData[path[path.length - 1].to].name;
     let html = `<h3>Result: <span class="highlight-name">${endPerson}</span> is the <span class="highlight-name">${term}</span> of <span class="highlight-name">${startPerson}</span></h3>`;
     html += "<h4>Path Analysis:</h4>";
     path.forEach((step, index) => {
-        const fromName = familyData[step.from] ? familyData[step.from].name : step.from;
-        const toName = familyData[step.to] ? familyData[step.to].name : step.to;
+        const fromName = window.familyData[step.from] ? window.familyData[step.from].name : step.from;
+        const toName = window.familyData[step.to] ? window.familyData[step.to].name : step.to;
         html += `<span class="path-step">${index + 1}. <span class="highlight-name">${fromName}</span> ${step.label} <span class="highlight-name">${toName}</span></span>`;
     });
     document.getElementById('result').innerHTML = html;
 }
 
-// Initialize on first load
+// Run initialization immediately on script load
+console.log("Relationship Finder: Script loaded.");
 initFinder();
 
-// Quartz v4 uses partial page transitions. 
-// This listener ensures the tool works when navigating from other pages.
+// Quartz v4 "Instant Navigation" listener
+document.removeEventListener("nav", initFinder);
 document.addEventListener("nav", initFinder);
 </script>
