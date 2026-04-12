@@ -108,9 +108,11 @@ function findRelationship() {
             ...(person.siblings || []).map(id => ({id, rel: "is the sibling of", type: "SIB"}))
         ];
         for (let conn of connections) {
-            if (!visited.has(conn.id) && window.familyData[conn.id]) {
-                visited.add(conn.id);
-                queue.push([conn.id, [...path, {from: currentId, to: conn.id, label: conn.rel, type: conn.type}]]);
+            if (!visited.has(conn.id)) {
+                if (window.familyData[conn.id]) {
+                    visited.add(conn.id);
+                    queue.push([conn.id, [...path, {from: currentId, to: conn.id, label: conn.rel, type: conn.type}]]);
+                }
             }
         }
     }
@@ -122,7 +124,9 @@ function getRelationshipTerm(path) {
     let prefix = "";
     let suffix = "";
     if (types[0] === 'SIDE') { prefix = "Spouse's "; types.shift(); }
-    if (types.length > 0 && types[types.length - 1] === 'SIDE') { suffix = "-in-law"; types.pop(); }
+    if (types.length) {
+        if (types[types.length - 1] === 'SIDE') { suffix = "-in-law"; types.pop(); }
+    }
     const pattern = types.join('-');
     const staticMap = {
         '': 'Spouse', 'UP': 'Parent', 'UP-UP': 'Grandparent', 'UP-UP-UP': 'Great-Grandparent',
@@ -134,29 +138,53 @@ function getRelationshipTerm(path) {
     };
     let result = staticMap[pattern] || null;
     const sibIndex = types.indexOf('SIB');
-    if (!result && sibIndex !== -1) {
-        const upCount = types.slice(0, sibIndex).filter(t => t === 'UP').length;
-        const downCount = types.slice(sibIndex + 1).filter(t => t === 'DOWN').length;
-        if (upCount > 1 && downCount === 0) {
-            let p = "Grand "; for (let i = 0; i < upCount - 2; i++) p = "Great-" + p;
-            result = p + "Uncle / Aunt";
-        } else if (downCount > 1 && upCount === 0) {
-            let p = "Grand "; for (let i = 0; i < downCount - 2; i++) p = "Great-" + p;
-            result = p + "Nephew / Niece";
-        } else if (upCount > 0 && downCount > 0) {
-            const k = Math.min(upCount, downCount), m = Math.abs(upCount - downCount);
-            const getOrdinal = (n) => { const s = ["th", "st", "nd", "rd"], v = n % 100; return n + (s[(v - 20) % 10] || s[v] || s[0]); };
-            result = `${getOrdinal(k)} Cousin`; if (m > 0) result += ` ${m}x removed`;
+    if (!result) {
+        if (sibIndex !== -1) {
+            const upCount = types.slice(0, sibIndex).filter(t => t === 'UP').length;
+            const downCount = types.slice(sibIndex + 1).filter(t => t === 'DOWN').length;
+            if (upCount > 1) {
+                if (downCount === 0) {
+                    let p = "Grand "; for (let i = 0; i < upCount - 2; i++) p = "Great-" + p;
+                    result = p + "Uncle / Aunt";
+                }
+            }
+            if (!result) {
+                if (downCount > 1) {
+                    if (upCount === 0) {
+                        let p = "Grand "; for (let i = 0; i < downCount - 2; i++) p = "Great-" + p;
+                        result = p + "Nephew / Niece";
+                    }
+                }
+            }
+            if (!result) {
+                if (upCount > 0) {
+                    if (downCount > 0) {
+                        const k = Math.min(upCount, downCount), m = Math.abs(upCount - downCount);
+                        const getOrdinal = (n) => { const s = ["th", "st", "nd", "rd"], v = n % 100; return n + (s[(v - 20) % 10] || s[v] || s[0]); };
+                        result = `${getOrdinal(k)} Cousin`; if (m > 0) result += ` ${m}x removed`;
+                    }
+                }
+            }
         }
     }
     if (!result) {
         const totalUps = types.filter(t => t === 'UP').length;
         const totalDowns = types.filter(t => t === 'DOWN').length;
-        if (totalUps > 3 && types.every(t => t === 'UP')) result = `${totalUps - 2}x Great-Grandparent`;
-        else if (totalDowns > 3 && types.every(t => t === 'DOWN')) result = `${totalDowns - 2}x Great-Grandchild`;
+        if (totalUps > 3) {
+            if (types.every(t => t === 'UP')) result = `${totalUps - 2}x Great-Grandparent`;
+        }
+        if (!result) {
+            if (totalDowns > 3) {
+                if (types.every(t => t === 'DOWN')) result = `${totalDowns - 2}x Great-Grandchild`;
+            }
+        }
     }
     if (!result) result = `Distant Relative (${path.length} degrees)`;
-    if (suffix === "-in-law" && (result.includes("in-law") || result.includes("Step-"))) { suffix = ""; prefix = "Spouse's "; }
+    if (suffix === "-in-law") {
+        if (result.includes("in-law") || result.includes("Step-")) {
+            suffix = ""; prefix = "Spouse's ";
+        }
+    }
     return prefix + result + suffix;
 }
 
