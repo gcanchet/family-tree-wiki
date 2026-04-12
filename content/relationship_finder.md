@@ -29,7 +29,11 @@ function initFinder() {
     var input = document.getElementById(id);
     if (!input) return;
     input.addEventListener('keydown', function(e) {
-      if (e && e.key && (e.key === 'Escape' || e.key === 'Esc')) e.stopPropagation();
+      if (e) {
+        if (e.key) {
+          if (e.key.indexOf('Esc') === 0) e.stopPropagation();
+        }
+      }
     });
   });
   var resDiv = document.getElementById('result');
