@@ -31,7 +31,7 @@ function initFinder() {
     populateDropdowns();
     return;
   }
-  var dataPath = 'https://gcanchet.github.io/family-tree-wiki/static/family_data.json';
+  var dataPath = 'https://gcanchet.github.io/family-tree-wiki/wiki/outputs/family_data.json';
   fetch(dataPath)
     .then(function(response) {
       if (!response.ok) throw new Error('File not found');
