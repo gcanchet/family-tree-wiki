@@ -25,6 +25,15 @@ button:hover { background: #2980b9; }
 if (!window.familyData) {window.familyData = {};}
 if (!window.nameToIdMap) {window.nameToIdMap = {};}
 function initFinder() {
+  var inputs = [document.getElementById('personA'), document.getElementById('personB')];
+  inputs.forEach(function(input) {
+    if (!input) return;
+    input.addEventListener('keydown', function(e) {
+      if (e && e.key && e.key.indexOf('Esc') === 0) {
+        e.stopPropagation();
+      }
+    }, true);
+  });
   var resDiv = document.getElementById('result');
   if (!resDiv) return;
   if (window.familyData) {
@@ -204,16 +213,26 @@ function getRelationshipTerm(path) {
   return prefix + result + suffix;
 }
 function displayPath(path) {
+  var resDiv = document.getElementById('result');
+  if (!resDiv) return;
+  resDiv.innerHTML = '';
   var term = getRelationshipTerm(path);
   var startPerson = window.familyData[path[0].from].name;
   var endPerson = window.familyData[path[path.length - 1].to].name;
-  var h = '<h3>' + endPerson + ' is the ' + term + ' of ' + startPerson + '</h3><h4>Path:</h4>';
+  var title = document.createElement('h3');
+  title.textContent = endPerson + ' is the ' + term + ' of ' + startPerson;
+  resDiv.appendChild(title);
+  var pathTitle = document.createElement('h4');
+  pathTitle.textContent = 'Path:';
+  resDiv.appendChild(pathTitle);
   path.forEach(function(step, i) {
     var f = window.familyData[step.from] ? window.familyData[step.from].name : step.from;
     var t = window.familyData[step.to] ? window.familyData[step.to].name : step.to;
-    h += '<span class=\'path-step\'>' + (i + 1) + '. ' + f + ' ' + step.label + ' ' + t + '</span>';
+    var span = document.createElement('span');
+    span.className = 'path-step';
+    span.textContent = (i + 1) + '. ' + f + ' ' + step.label + ' ' + t;
+    resDiv.appendChild(span);
   });
-  document.getElementById('result').innerHTML = h;
 }
 initFinder();
 document.removeEventListener('nav', initFinder);
