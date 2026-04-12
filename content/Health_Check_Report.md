@@ -37,6 +37,7 @@ There are several significant individuals with no spouse or children linked, whi
 1. **Research Pass:** Prioritize filling `birth_date` and `location` for Generation 1 and 2 patriarchs/matriarchs to anchor the timeline.
 2. **Narrative Expansion:** Use future journal entries or interview notes to replace "Member of the X generation" with specific life details.
 3. **Linting:** Periodically run a check for any new links created in Chat that haven't been saved to the Index.
-4. **Sharing Strategy:** Evaluate **Obsidian Publish** or **Quartz** to provide a web-based, clickable interface for family members to explore the 227+ interlinked entities.
+4. **Tool Integration:** Ensure the Relationship Finder is linked on the homepage for easy path tracing between the 235 entities.
+5. **Sharing Strategy:** Evaluate **Obsidian Publish** or **Quartz** to provide a web-based, clickable interface for family members to explore the 227+ interlinked entities.
 
 **Status:** HEALTHY (Maintenance Required)

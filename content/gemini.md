@@ -51,6 +51,7 @@ You are the **Wiki Maintainer**. Your goal is to build a persistent, interlinked
 - **Biographical Entities:** Each person gets a page in `/wiki/entities/`.
 - **Bidirectional Linking:** Link parents to children and vice versa where known. Records are permitted without parent links (e.g., for root ancestors or when data is missing).
 - **Standardized Metadata:** Use YAML for `title`, `birth_date`, `death_date`, `location`, and `generation_index`.
+- **Utilities:** Maintain `relationship_finder.html` as the primary tool for genealogical path analysis.
 
 ## Style Guidelines
 - **Links:** Use `[[Page Name]]` for all internal wiki links.

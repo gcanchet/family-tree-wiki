@@ -1,10 +1,17 @@
 ---
 tags: person
 generation_index: 4
-birth_date: 
-location: 
+birth_date: null
+location: null
 source_date: 2025-05-22
 confidence_score: 1.0
+parents:
+- asiok_1
+- tuna_sy
+spouse:
+- marlon_ang
+children: []
+siblings: []
 ---
 # Sharon See (3)
 

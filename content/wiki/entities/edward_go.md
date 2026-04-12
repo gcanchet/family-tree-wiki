@@ -1,10 +1,16 @@
 ---
 tags: person
 generation_index: 6
-birth_date: 
-location: 
+birth_date: null
+location: null
 source_date: 2025-05-22
 confidence_score: 1.0
+parents:
+- robin
+- monica
+spouse: []
+children: []
+siblings: []
 ---
 # Edward Go
 

@@ -1,10 +1,17 @@
 ---
 tags: person
 generation_index: 4
-birth_date:
-location:
+birth_date: null
+location: null
 source_date: 2025-05-22
 confidence_score: 1
+parents:
+- rafael_lim
+- julia_3
+spouse:
+- manuel_ongjuco
+children: []
+siblings: []
 ---
 # Rosanne Ongjuco
 

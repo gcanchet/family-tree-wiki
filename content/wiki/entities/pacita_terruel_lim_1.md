@@ -1,10 +1,17 @@
 ---
 tags: person
 generation_index: 2
-birth_date: 
-location: 
+birth_date: null
+location: null
 source_date: 2025-05-22
 confidence_score: 1.0
+parents:
+- limpe
+- cristina_terruel
+spouse:
+- biyo_yong_chua
+children: []
+siblings: []
 ---
 # Pacita Terruel Lim (1)
 

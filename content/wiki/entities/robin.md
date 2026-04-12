@@ -1,10 +1,17 @@
 ---
 tags: person
 generation_index: 5
-birth_date: 
-location: 
+birth_date: null
+location: null
 source_date: 2025-05-22
 confidence_score: 1.0
+parents:
+- mary_jane_1
+- robert_ang
+spouse:
+- monica
+children: []
+siblings: []
 ---
 # Robin
 

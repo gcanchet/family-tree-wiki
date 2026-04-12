@@ -182,3 +182,12 @@
 ## [2026-04-11] automation | Created preview_local.bat to synchronize content and launch the local Quartz preview server.
 ## [2026-04-11] ui | Removed active references to the Rafael Lim Branch Chart from the index as part of navigation cleanup.
 ## [2026-04-11] system | Acknowledged updated gemini.md schema and re-sorted Wiki Index alphabetically.
+## [2026-04-11] system | Created Python standardization script and interactive Relationship Finder tool.
+## [2026-04-11] system | Documentation provided for running the family_processor.py script and PyYAML dependency.
+## [2026-04-11] system | Fixed path mismatch in Relationship Finder to correctly locate family_data.json.
+## [2026-04-11] system | Improved family_processor.py to scrape relationships from Markdown body if frontmatter is empty.
+## [2026-04-11] system | Enhanced Python link extraction logic and manually synchronized family_data.json with log history.
+## [2026-04-11] system | Created master_dashboard.bat to provide a centralized CLI for running processing, preview, and deployment scripts.
+## [2026-04-11] ui | Integrated Relationship Finder link into Health Check Report and Project Schema.
+## [2026-04-11] system | Refactored family_processor.py with a pre-processing name map to resolve Obsidian link/filename mismatches.
+## [2026-04-11] ui | Added genealogical term detection (Grandparent, Cousin, etc.) to the Relationship Finder.
