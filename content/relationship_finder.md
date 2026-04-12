@@ -28,17 +28,25 @@ button:hover { background: #2980b9; }
 let familyData = {};
 let nameToIdMap = {};
 
-// Load the generated JSON data
-// Path adjusted to be relative to the site root
-fetch('/family-tree-wiki/wiki/outputs/family_data.json')
-    .then(response => response.json())
-    .then(data => {
-        familyData = data;
-        populateDropdowns();
-    })
-    .catch(err => {
-        document.getElementById('result').innerHTML = "Error: Could not load family_data.json. Ensure the Python script has been run.";
-    });
+function initFinder() {
+    const resDiv = document.getElementById('result');
+    // Using a relative path makes it work locally and on GitHub Pages
+    fetch('wiki/outputs/family_data.json')
+        .then(response => {
+            if (!response.ok) throw new Error("File not found");
+            return response.json();
+        })
+        .then(data => {
+            familyData = data;
+            populateDropdowns();
+        })
+        .catch(err => {
+            console.error("Data load failed:", err);
+            if (resDiv) {
+                resDiv.innerHTML = "Error: Could not load family data. Ensure Action [1] (family_processor.py) has been run and the file is published.";
+            }
+        });
+}
 
 function populateDropdowns() {
     const datalist = document.getElementById('peopleList');
@@ -150,4 +158,11 @@ function displayPath(path) {
     });
     document.getElementById('result').innerHTML = html;
 }
+
+// Initialize on first load
+initFinder();
+
+// Quartz v4 uses partial page transitions. 
+// This listener ensures the tool works when navigating from other pages.
+document.addEventListener("nav", initFinder);
 </script>
