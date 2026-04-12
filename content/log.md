@@ -194,4 +194,5 @@
 ## [2026-04-11] system | Updated data pipeline to use absolute URLs and moved JSON to static folder for GitHub Pages compatibility.
 ## [2026-04-11] system | Debugging: Resolved SyntaxError in relationship_finder.html preventing JSON load; implemented Async IIFE for robust fetching.
 ## [2026-04-11] system | Corrected data path to /wiki/outputs/family_data.json and updated processor output destination.
+## [2026-04-11] system | Fixed SyntaxError in Relationship Finder by expanding multi-statement lines and adding braces to conditional blocks.
 ## [2026-04-11] system | Updated relationship_finder.md to use absolute GitHub URL and refactored dense JS logic to prevent parsing errors.
