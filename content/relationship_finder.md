@@ -22,18 +22,16 @@ button:hover { background: #2980b9; }
 <div id="result">Results will appear here...</div>
 </div>
 <script type="text/javascript">
-/*<![CDATA[*/
 if (!window.familyData) {window.familyData = {};}
 if (!window.nameToIdMap) {window.nameToIdMap = {};}
 function initFinder() {
   var resDiv = document.getElementById('result');
   if (!resDiv) return;
-  if (Object.keys(window.familyData).length > 0) {
+  if (window.familyData && Object.keys(window.familyData).length > 0) {
     populateDropdowns();
     return;
   }
-  var isGitHub = window.location.hostname.indexOf('github.io') !== -1;
-  var dataPath = (isGitHub ? '/family-tree-wiki' : '') + '/wiki/outputs/family_data.json';
+  var dataPath = 'https://gcanchet.github.io/family-tree-wiki/static/family_data.json';
   fetch(dataPath)
     .then(function(response) {
       if (!response.ok) throw new Error('File not found');
@@ -109,9 +107,20 @@ function getRelationshipTerm(path) {
     if (sibIndex !== -1) {
       var upCount = types.slice(0, sibIndex).filter(function(t) {return t === 'UP';}).length;
       var downCount = types.slice(sibIndex + 1).filter(function(t) {return t === 'DOWN';}).length;
-      if (upCount > 1) { if (downCount === 0) { var p = 'Grand '; for (var i = 0; i < upCount - 2; i++) {p = 'Grand ' + p;} result = p + 'Uncle / Aunt'; } }
-      if (!result) { if (downCount > 1) { if (upCount === 0) { var p = 'Grand '; for (var i = 0; i < downCount - 2; i++) {p = 'Grand ' + p;} result = p + 'Nephew / Niece'; } } }
-      if (!result) { if (upCount > 0) { if (downCount > 0) { var k = Math.min(upCount, downCount), m = Math.abs(upCount - downCount); var s = ['th', 'st', 'nd', 'rd'], v = k % 100; var su = s[(v - 20) % 10]; if (!su) su = s[v]; if (!su) su = s[0]; result = k + su + ' Cousin'; if (m > 0) {result += ' ' + m + 'x removed';} } } }
+      if (upCount > 1 && downCount === 0) {
+        var p = 'Grand '; for (var i = 0; i < upCount - 2; i++) {p = 'Grand ' + p;} result = p + 'Uncle / Aunt';
+      }
+      if (!result && downCount > 1 && upCount === 0) {
+        var p = 'Grand '; for (var i = 0; i < downCount - 2; i++) {p = 'Grand ' + p;} result = p + 'Nephew / Niece';
+      }
+      if (!result && upCount > 0 && downCount > 0) {
+        var k = Math.min(upCount, downCount), m = Math.abs(upCount - downCount);
+        var s = ['th', 'st', 'nd', 'rd'], v = k % 100;
+        var su = s[(v - 20) % 10];
+        if (!su) su = s[v]; if (!su) su = s[0];
+        result = k + su + ' Cousin';
+        if (m > 0) {result += ' ' + m + 'x removed';}
+      }
     }
   }
   if (!result) {
@@ -139,5 +148,4 @@ function displayPath(path) {
 initFinder();
 document.removeEventListener('nav', initFinder);
 document.addEventListener('nav', initFinder);
-/*]]>*/
 </script>
