@@ -66,7 +66,9 @@ function populateDropdowns() {
   datalist.innerHTML = '';
   window.nameToIdMap = {};
   var sortedIds = keys.sort(function(a, b) {
-    return (window.familyData[a].name || "").localeCompare(window.familyData[b].name || "");
+    var nameA = window.familyData[a].name || a;
+    var nameB = window.familyData[b].name || b;
+    return nameA.localeCompare(nameB);
   });
   sortedIds.forEach(function(id) {
     var name = window.familyData[id].name || id;
