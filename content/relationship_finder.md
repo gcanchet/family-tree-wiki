@@ -22,127 +22,122 @@ button:hover { background: #2980b9; }
 <div id="result">Results will appear here...</div>
 </div>
 <script type="text/javascript">
-//<![CDATA[
-
-if (!window.familyData) { window.familyData = {}; }
-if (!window.nameToIdMap) { window.nameToIdMap = {}; }
+/*<![CDATA[*/
+if (!window.familyData) {window.familyData = {};}
+if (!window.nameToIdMap) {window.nameToIdMap = {};}
 function initFinder() {
-const resDiv = document.getElementById('result');
-if (!resDiv) return;
-if (Object.keys(window.familyData).length > 0) {
-populateDropdowns();
-return;
-}
-const isGitHub = window.location.hostname.indexOf('github.io') !== -1;
-const dataPath = (isGitHub ? '/family-tree-wiki' : '') + '/wiki/outputs/family_data.json';
-fetch(dataPath)
-.then(function(response) {
-if (!response.ok) throw new Error('File not found');
-return response.json();
-})
-.then(function(data) {
-window.familyData = data;
-populateDropdowns();
-})
-.catch(function(err) {
-resDiv.innerHTML = 'Error loading family data. Ensure the processing script was run.';
-});
+  var resDiv = document.getElementById('result');
+  if (!resDiv) return;
+  if (Object.keys(window.familyData).length > 0) {
+    populateDropdowns();
+    return;
+  }
+  var isGitHub = window.location.hostname.indexOf('github.io') !== -1;
+  var dataPath = (isGitHub ? '/family-tree-wiki' : '') + '/wiki/outputs/family_data.json';
+  fetch(dataPath)
+    .then(function(response) {
+      if (!response.ok) throw new Error('File not found');
+      return response.json();
+    })
+    .then(function(data) {
+      window.familyData = data;
+      populateDropdowns();
+    })
+    .catch(function(err) {
+      resDiv.innerHTML = 'Error loading family data. Check console.';
+    });
 }
 function populateDropdowns() {
-const datalist = document.getElementById('peopleList');
-if (!datalist) return;
-datalist.innerHTML = '';
-window.nameToIdMap = {};
-const sortedIds = Object.keys(window.familyData).sort(function(a, b) { return window.familyData[a].name.localeCompare(window.familyData[b].name); });
-sortedIds.forEach(function(id) {
-const name = window.familyData[id].name;
-window.nameToIdMap[name] = id;
-const opt = document.createElement('option');
-opt.value = name;
-datalist.appendChild(opt);
-});
+  var datalist = document.getElementById('peopleList');
+  if (!datalist) return;
+  datalist.innerHTML = '';
+  window.nameToIdMap = {};
+  var sortedIds = Object.keys(window.familyData).sort(function(a, b) {return window.familyData[a].name.localeCompare(window.familyData[b].name);});
+  sortedIds.forEach(function(id) {
+    var name = window.familyData[id].name;
+    window.nameToIdMap[name] = id;
+    var opt = document.createElement('option');
+    opt.value = name;
+    datalist.appendChild(opt);
+  });
 }
 function findRelationship() {
-const nameA = document.getElementById('personA').value;
-const nameB = document.getElementById('personB').value;
-const start = window.nameToIdMap[nameA];
-const end = window.nameToIdMap[nameB];
-const resDiv = document.getElementById('result');
-if (!start || !end) { resDiv.innerHTML = 'Select valid names.'; return; }
-if (start === end) { resDiv.innerHTML = 'Same person selected.'; return; }
-let queue = [[start, []]];
-let visited = new Set([start]);
-while (queue.length !== 0) {
-let [currentId, path] = queue.shift();
-if (currentId === end) { displayPath(path); return; }
-const person = window.familyData[currentId];
-if (!person) continue;
-const connections = [
-...(person.parents ? person.parents : []).map(function(id) { return {id:id, rel:'is child of', type:'UP'}; }),
-...(person.children ? person.children : []).map(function(id) { return {id:id, rel:'is parent of', type:'DOWN'}; }),
-...(person.spouse ? person.spouse : []).map(function(id) { return {id:id, rel:'is spouse of', type:'SIDE'}; }),
-...(person.siblings ? person.siblings : []).map(function(id) { return {id:id, rel:'is sibling of', type:'SIB'}; })
-];
-for (let i = 0; i < connections.length; i++) {
-const conn = connections[i];
-if (!visited.has(conn.id)) {
-if (window.familyData[conn.id]) {
-visited.add(conn.id);
-queue.push([conn.id, [...path, {from: currentId, to: conn.id, label: conn.rel, type: conn.type}]]);
-}}}}}
-function getRelationshipTerm(path) {
-let types = path.map(function(p) { return p.type; });
-let prefix = '';
-let suffix = '';
-if (types[0] === 'SIDE') { prefix = "Spouse's "; types.shift(); }
-if (types.length !== 0) { if (types[types.length - 1] === 'SIDE') { suffix = '-in-law'; types.pop(); } }
-const pattern = types.join('-');
-const staticMap = { '': 'Spouse', 'UP': 'Parent', 'UP-UP': 'Grandparent', 'UP-UP-UP': 'Great-Grandparent', 'DOWN': 'Child', 'DOWN-DOWN': 'Grandchild', 'DOWN-DOWN-DOWN': 'Great-Grandchild', 'SIDE': 'Spouse', 'SIB': 'Sibling', 'UP-SIDE': 'Step-Parent', 'SIDE-UP': 'Parent-in-law', 'SIDE-DOWN': 'Step-Child', 'DOWN-SIDE': 'Child-in-law', 'SIDE-SIB': 'Sibling-in-law', 'SIB-SIDE': 'Sibling-in-law', 'UP-SIB': 'Uncle / Aunt', 'SIB-DOWN': 'Nephew / Niece', 'UP-SIDE-DOWN': 'Step-Sibling' };
-let result = staticMap[pattern];
-if (!result) {
-const sibIndex = types.indexOf('SIB');
-if (sibIndex !== -1) {
-const upCount = types.slice(0, sibIndex).filter(function(t) { return t === 'UP'; }).length;
-const downCount = types.slice(sibIndex + 1).filter(function(t) { return t === 'DOWN'; }).length;
-if (upCount > 1 && downCount === 0) {
-let p = 'Grand ';
-for (let i = 0; i < upCount - 2; i++) { p = 'Grand ' + p; }
-result = p + 'Uncle / Aunt';
-} else if (downCount > 1 && upCount === 0) {
-let p = 'Grand ';
-for (let i = 0; i < downCount - 2; i++) { p = 'Grand ' + p; }
-result = p + 'Nephew / Niece';
-} else if (upCount > 0 && downCount > 0) {
-const k = Math.min(upCount, downCount), m = Math.abs(upCount - downCount);
-const s = ['th', 'st', 'nd', 'rd'], v = k % 100;
-let su = s[(v - 20) % 10] || s[v] || s[0];
-result = k + su + ' Cousin';
-if (m > 0) { result += ' ' + m + 'x removed'; }
-}}}
-if (!result) {
-const tu = types.filter(function(t) { return t === 'UP'; }).length;
-const td = types.filter(function(t) { return t === 'DOWN'; }).length;
-if (tu > 3 && types.every(function(t) { return t === 'UP'; })) { result = (tu - 2) + 'x Great-Grandparent'; }
-else if (td > 3 && types.every(function(t) { return t === 'DOWN'; })) { result = (td - 2) + 'x Great-Grandchild'; }
+  var nameA = document.getElementById('personA').value;
+  var nameB = document.getElementById('personB').value;
+  var start = window.nameToIdMap[nameA];
+  var end = window.nameToIdMap[nameB];
+  var resDiv = document.getElementById('result');
+  if (!start || !end) {resDiv.innerHTML = 'Select valid names.'; return;}
+  if (start === end) {resDiv.innerHTML = 'Same person selected.'; return;}
+  var queue = [[start, []]];
+  var visited = new Set([start]);
+  while (queue.length !== 0) {
+    var item = queue.shift();
+    var currentId = item[0];
+    var path = item[1];
+    if (currentId === end) {displayPath(path); return;}
+    var person = window.familyData[currentId];
+    if (person) {
+      var conns = [];
+      if (person.parents) person.parents.forEach(function(id) {conns.push({id:id, rel:'is child of', type:'UP'});});
+      if (person.children) person.children.forEach(function(id) {conns.push({id:id, rel:'is parent of', type:'DOWN'});});
+      if (person.spouse) person.spouse.forEach(function(id) {conns.push({id:id, rel:'is spouse of', type:'SIDE'});});
+      if (person.siblings) person.siblings.forEach(function(id) {conns.push({id:id, rel:'is sibling of', type:'SIB'});});
+      conns.forEach(function(conn) {
+        if (!visited.has(conn.id)) {
+          if (window.familyData[conn.id]) {
+            visited.add(conn.id);
+            var newPath = path.concat([{from: currentId, to: conn.id, label: conn.rel, type: conn.type}]);
+            queue.push([conn.id, newPath]);
+          }
+        }
+      });
+    }
+  }
+  resDiv.innerHTML = 'No path found.';
 }
-if (!result) { result = 'Relative (' + path.length + ' degrees)'; }
-if (suffix === '-in-law' && (result.indexOf('in-law') !== -1 || result.indexOf('Step-') !== -1)) { suffix = ''; prefix = "Spouse's "; }
-return prefix + result + suffix;
+function getRelationshipTerm(path) {
+  var types = path.map(function(p) {return p.type;});
+  var prefix = ''; var suffix = '';
+  if (types[0] === 'SIDE') {prefix = 'Spouse\'s '; types.shift();}
+  if (types.length !== 0) {if (types[types.length - 1] === 'SIDE') {suffix = '-in-law'; types.pop();}}
+  var pattern = types.join('-');
+  var staticMap = {'':'Spouse','UP':'Parent','UP-UP':'Grandparent','UP-UP-UP':'Great-Grandparent','DOWN':'Child','DOWN-DOWN':'Grandchild','DOWN-DOWN-DOWN':'Great-Grandchild','SIDE':'Spouse','SIB':'Sibling','UP-SIDE':'Step-Parent','SIDE-UP':'Parent-in-law','SIDE-DOWN':'Step-Child','DOWN-SIDE':'Child-in-law','SIDE-SIB':'Sibling-in-law','SIB-SIDE':'Sibling-in-law','UP-SIB':'Uncle / Aunt','SIB-DOWN':'Nephew / Niece','UP-SIDE-DOWN':'Step-Sibling'};
+  var result = staticMap[pattern];
+  if (!result) {
+    var sibIndex = types.indexOf('SIB');
+    if (sibIndex !== -1) {
+      var upCount = types.slice(0, sibIndex).filter(function(t) {return t === 'UP';}).length;
+      var downCount = types.slice(sibIndex + 1).filter(function(t) {return t === 'DOWN';}).length;
+      if (upCount > 1) { if (downCount === 0) { var p = 'Grand '; for (var i = 0; i < upCount - 2; i++) {p = 'Grand ' + p;} result = p + 'Uncle / Aunt'; } }
+      if (!result) { if (downCount > 1) { if (upCount === 0) { var p = 'Grand '; for (var i = 0; i < downCount - 2; i++) {p = 'Grand ' + p;} result = p + 'Nephew / Niece'; } } }
+      if (!result) { if (upCount > 0) { if (downCount > 0) { var k = Math.min(upCount, downCount), m = Math.abs(upCount - downCount); var s = ['th', 'st', 'nd', 'rd'], v = k % 100; var su = s[(v - 20) % 10]; if (!su) su = s[v]; if (!su) su = s[0]; result = k + su + ' Cousin'; if (m > 0) {result += ' ' + m + 'x removed';} } } }
+    }
+  }
+  if (!result) {
+    var tu = types.filter(function(t) {return t === 'UP';}).length;
+    var td = types.filter(function(t) {return t === 'DOWN';}).length;
+    if (tu > 3) { if (types.every(function(t) {return t === 'UP';})) {result = (tu - 2) + 'x Great-Grandparent';} }
+    if (!result) { if (td > 3) { if (types.every(function(t) {return t === 'DOWN';})) {result = (td - 2) + 'x Great-Grandchild';} } }
+  }
+  if (!result) {result = 'Relative (' + path.length + ' degrees)';}
+  if (suffix === '-in-law') { if (result.indexOf('in-law') !== -1) {suffix = ''; prefix = 'Spouse\'s ';} else if (result.indexOf('Step-') !== -1) {suffix = ''; prefix = 'Spouse\'s ';} }
+  return prefix + result + suffix;
 }
 function displayPath(path) {
-const term = getRelationshipTerm(path);
-const startPerson = window.familyData[path[0].from].name;
-const endPerson = window.familyData[path[path.length - 1].to].name;
-let h = '<h3>' + endPerson + ' is the ' + term + ' of ' + startPerson + '</h3><h4>Path:</h4>';
-path.forEach(function(step, i) {
-const f = window.familyData[step.from] ? window.familyData[step.from].name : step.from;
-const t = window.familyData[step.to] ? window.familyData[step.to].name : step.to;
-h += '<span class="path-step">' + (i + 1) + '. ' + f + ' ' + step.label + ' ' + t + '</span>';
-});
-document.getElementById('result').innerHTML = h;
+  var term = getRelationshipTerm(path);
+  var startPerson = window.familyData[path[0].from].name;
+  var endPerson = window.familyData[path[path.length - 1].to].name;
+  var h = '<h3>' + endPerson + ' is the ' + term + ' of ' + startPerson + '</h3><h4>Path:</h4>';
+  path.forEach(function(step, i) {
+    var f = window.familyData[step.from] ? window.familyData[step.from].name : step.from;
+    var t = window.familyData[step.to] ? window.familyData[step.to].name : step.to;
+    h += '<span class=\'path-step\'>' + (i + 1) + '. ' + f + ' ' + step.label + ' ' + t + '</span>';
+  });
+  document.getElementById('result').innerHTML = h;
 }
 initFinder();
 document.removeEventListener('nav', initFinder);
 document.addEventListener('nav', initFinder);
+/*]]>*/
 </script>
-//]]>

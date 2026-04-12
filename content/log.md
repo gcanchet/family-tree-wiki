@@ -191,3 +191,4 @@
 ## [2026-04-11] ui | Integrated Relationship Finder link into Health Check Report and Project Schema.
 ## [2026-04-11] system | Refactored family_processor.py with a pre-processing name map to resolve Obsidian link/filename mismatches.
 ## [2026-04-11] ui | Added genealogical term detection (Grandparent, Cousin, etc.) to the Relationship Finder.
+## [2026-04-11] system | Updated data pipeline to use absolute URLs and moved JSON to static folder for GitHub Pages compatibility.

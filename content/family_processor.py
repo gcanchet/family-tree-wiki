@@ -5,7 +5,7 @@ import yaml
 
 VAULT_ROOT = r"c:\Users\Great\AI\obsidian\my vault"
 ENTITIES_DIR = os.path.join(VAULT_ROOT, "wiki", "entities")
-OUTPUT_JSON = os.path.join(VAULT_ROOT, "wiki", "outputs", "family_data.json")
+OUTPUT_JSON = os.path.join(VAULT_ROOT, "static", "family_data.json")
 
 def get_clean_id(link, name_map=None):
     """Extracts the entity ID from an Obsidian internal link."""
