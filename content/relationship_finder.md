@@ -21,7 +21,9 @@ button:hover { background: #2980b9; }
 </div>
 <div id="result">Results will appear here...</div>
 </div>
-<script>
+<script type="text/javascript">
+//<![CDATA[
+
 if (!window.familyData) { window.familyData = {}; }
 if (!window.nameToIdMap) { window.nameToIdMap = {}; }
 function initFinder() {
@@ -143,3 +145,4 @@ initFinder();
 document.removeEventListener('nav', initFinder);
 document.addEventListener('nav', initFinder);
 </script>
+//]]>
