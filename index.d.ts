@@ -11,5 +11,10 @@ interface CustomEventMap {
   readermodechange: CustomEvent<{ mode: "on" | "off" }>
 }
 
+declare global {
+  interface DocumentEventMap extends CustomEventMap {}
+  interface WindowEventMap extends CustomEventMap {}
+}
+
 type ContentIndex = Record<FullSlug, ContentDetails>
 declare const fetchData: Promise<ContentIndex>
