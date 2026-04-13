@@ -198,3 +198,9 @@
 ## [2026-04-11] system | Implemented "escape-proof" JavaScript in Relationship Finder to resolve SyntaxErrors caused by Markdown character encoding (&&, <, >).
 ## [2026-04-11] system | Fixed SyntaxError caused by double-quote escaping in relationship_finder.md sort logic.
 ## [2026-04-11] system | Updated relationship_finder.md to use absolute GitHub URL and refactored dense JS logic to prevent parsing errors.
+## [2026-04-11] system | Final Validation: Confirmed Relationship Finder is fully operational on GitHub Pages; data fetching and relationship logic verified.
+## [2026-04-11] system | Added Backup Manager feature to create, list, and prune timestamped vault backups.
+## [2026-04-11] system | Enhanced Backup Manager to support optional descriptions in backup folder names.
+## [2026-04-11] system | Added relationship-guide.md to provide user documentation for navigating the family tree and understanding relationships.
+## [2026-04-11] lint | Renamed Biyo Yong Chua to Bio Yong Chua across the wiki for accuracy.
+## [2026-04-11] lint | Renamed Pacita Terruel Lim (1) to Pacita Teruel Lim (1) and updated all relationship links.

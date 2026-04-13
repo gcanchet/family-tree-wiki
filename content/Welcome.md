@@ -7,6 +7,7 @@ Welcome to our Family Tree Wiki! This is a collaborative space where we preserve
 
 ## 📊 Visualization & Maintenance
  - [[log|Wiki Activity Log]]
+ - [[relationship-guide|Relationship Guide]]
  - [[relationship_finder|Relationship Finder Tool]]
  - [[gemini|Wiki Maintenance Schema]]
 
