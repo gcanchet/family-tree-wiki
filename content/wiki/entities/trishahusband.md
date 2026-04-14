@@ -8,7 +8,8 @@ confidence_score: 1.0
 parents: []
 spouse:
 - trisha_so_1
-children: []
+children:
+- niko
 siblings: []
 ---
 # Trishahusband

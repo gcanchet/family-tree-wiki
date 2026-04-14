@@ -1,4 +1,5 @@
 ---
+title: Karl Andrew Francisco
 tags: person
 generation_index: 4
 birth_date: null
@@ -12,10 +13,10 @@ spouse: []
 children: []
 siblings: []
 ---
-# Karl Anthony
+# Karl Andrew Francisco
 
 ## Genealogy
 - **Parents**: [[apollonio_8]], [[dinah]]
 
 ## Biographical Data
-Member of the fourth generation of the Lim family.
+Member of the fourth generation of the Lim family. Formerly identified as Karl Anthony.

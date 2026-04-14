@@ -10,7 +10,11 @@ parents:
 - lengsiok_ong
 spouse:
 - alfonso_so
-children: []
+children:
+- charmaine_so_2
+- iris_so_4
+- sherylyn_so_3
+- trisha_so_1
 siblings: []
 ---
 # Vivian Ong (1)

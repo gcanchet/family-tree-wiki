@@ -8,7 +8,8 @@ confidence_score: 1.0
 parents: []
 spouse:
 - spencer_2
-children: []
+children:
+- specerson
 siblings: []
 ---
 # Spencerwife

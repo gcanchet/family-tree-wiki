@@ -10,7 +10,8 @@ parents:
 - bienbien_chua
 spouse:
 - ellen
-children: []
+children:
+- aidan_ong
 siblings: []
 ---
 # Angelo Ong (1)

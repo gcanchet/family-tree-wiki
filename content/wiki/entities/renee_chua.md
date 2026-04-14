@@ -1,4 +1,5 @@
 ---
+title: Renee Chua
 tags: person
 generation_index: 4
 birth_date: null
@@ -7,15 +8,17 @@ source_date: 2025-05-22
 confidence_score: 1.0
 parents: []
 spouse:
-- jude_4
-children: []
+- joel_alexander_chua_2
+children:
+- sean_chua
+- erin_chua
 siblings: []
 ---
-# Marivie
+# Renee Chua
 
 ## Genealogy
-- **Spouse**: [[jude_4|Jude (4)]]
-- **Children**: [[mikkel|Mikkel]], [[margaux|Margaux]]
+- **Spouse**: [[joel_alexander_chua_2|Joel Alexander Chua (2)]]
+- **Children**: [[sean_chua|Sean Chua]], [[erin_chua|Erin Chua]]
 
 ## Biographical Data
 Married into the Haipin (2) branch of the family.

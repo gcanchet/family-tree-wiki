@@ -8,7 +8,11 @@ confidence_score: 1.0
 parents: []
 spouse:
 - mary_ann_chua_4
-children: []
+children:
+- karlene_tan
+- kashlee_tan
+- kathlene_tan
+- kaylene_tan
 siblings: []
 ---
 # Wilbert Tan

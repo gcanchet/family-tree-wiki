@@ -8,7 +8,10 @@ confidence_score: 1.0
 parents: []
 spouse:
 - cherry
-children: []
+- cherry_uy
+children:
+- clark_david_uy
+- dale_cyril_uy
 siblings: []
 ---
 # Dennis Uy

@@ -8,7 +8,11 @@ confidence_score: 1.0
 parents: []
 spouse:
 - po_cu
-children: []
+children:
+- bio_yong_chua
+- huy_chua
+- juana
+- koa
 siblings: []
 ---
 # Eng Chua

@@ -8,7 +8,8 @@ confidence_score: 1.0
 parents: []
 spouse:
 - dominador_3
-children: []
+children:
+- marites_1
 siblings: []
 ---
 # Asuncion

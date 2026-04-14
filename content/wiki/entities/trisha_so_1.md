@@ -10,7 +10,8 @@ parents:
 - vivian_ong_1
 spouse:
 - trishahusband
-children: []
+children:
+- niko
 siblings: []
 ---
 # Trisha So (1)

@@ -8,7 +8,12 @@ confidence_score: 1.0
 parents: []
 spouse:
 - regan_4
-children: []
+children:
+- alexa_rielle_lim
+- imari_rafaielle_lim
+- juliana_ryanne_lim
+- rania_nicole_lim
+- ryden_isaac_lim
 siblings: []
 ---
 # Pamela Ingrid Lim

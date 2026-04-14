@@ -10,7 +10,10 @@ parents:
 - tsaiti_chua
 spouse:
 - carlos_gotauco
-children: []
+children:
+- baby_gotauco_1
+- charlie_gotauco_2
+- elvie_gotauco_3
 siblings: []
 ---
 # Sengti Ong (1)

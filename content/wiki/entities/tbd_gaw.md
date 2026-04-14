@@ -8,7 +8,8 @@ confidence_score: 1.0
 parents: []
 spouse:
 - koa
-children: []
+children:
+- victor_gaw
 siblings: []
 ---
 # TBD Gaw

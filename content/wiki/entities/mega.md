@@ -8,7 +8,9 @@ confidence_score: 1.0
 parents: []
 spouse:
 - bernice_ong_2
-children: []
+children:
+- hannah_1
+- olivia_2
 siblings: []
 ---
 # Mega

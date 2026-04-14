@@ -8,7 +8,11 @@ confidence_score: 1.0
 parents: []
 spouse:
 - chongbeng_ong_3
-children: []
+children:
+- albert_ong_2
+- clemente_ong_4
+- katherine_ong_3
+- vivian_ong_1
 siblings: []
 ---
 # Lengsiok Ong

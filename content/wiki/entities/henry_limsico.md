@@ -8,7 +8,10 @@ confidence_score: 1.0
 parents: []
 spouse:
 - sokheng_ong_3
-children: []
+children:
+- joni_limsico
+- linsen_limsico
+- tsoni_limsico
 siblings: []
 ---
 # Henry Limsico

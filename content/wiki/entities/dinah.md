@@ -8,7 +8,17 @@ confidence_score: 1.0
 parents: []
 spouse:
 - apollonio_8
-children: []
+children:
+- alterjun
+- carl_dawner
+- christian
+- dicie
+- eilwin
+- joanne
+- karl_adrian
+- karl_anthony
+- sheryl
+- karl_andrew_francisco
 siblings: []
 ---
 # Dinah

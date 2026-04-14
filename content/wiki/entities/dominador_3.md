@@ -11,7 +11,10 @@ parents:
 spouse:
 - sionee
 - asuncion
-children: []
+children:
+- dinky_3
+- dondi_2
+- marites_1
 siblings: []
 ---
 # Dominador (3)

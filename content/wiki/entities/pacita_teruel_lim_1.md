@@ -11,7 +11,9 @@ parents:
 - cristina_terruel
 spouse:
 - bio_yong_chua
-children: []
+children:
+- maria_lourdes_chua_3
+- mary_ann_chua_4
 siblings: []
 ---
 # Pacita Teruel Lim (1)

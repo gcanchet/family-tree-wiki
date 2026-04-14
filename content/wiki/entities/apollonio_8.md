@@ -11,7 +11,17 @@ parents:
 - cristina_terruel
 spouse:
 - dinah
-children: []
+children:
+- alterjun
+- carl_dawner
+- christian
+- dicie
+- eilwin
+- joanne
+- karl_adrian
+- karl_anthony
+- sheryl
+- karl_andrew_francisco
 siblings: []
 ---
 # Apollonio (8)

@@ -7,7 +7,7 @@ source_date: 2025-05-22
 confidence_score: 1.0
 parents:
 - jonathan_chua_5
-- suzie
+- susie_gamba
 spouse: []
 children: []
 siblings: []
@@ -15,7 +15,7 @@ siblings: []
 # Aldrin Chua (1)
 
 ## Genealogy
-- **Parents**: [[jonathan_chua_5]], [[suzie]]
+- **Parents**: [[jonathan_chua_5|Jonathan Chua (5)]], [[susie_gamba|Susie Gamba]]
 
 ## Biographical Data
 Member of the fourth generation of the Chua family.

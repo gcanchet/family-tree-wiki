@@ -8,7 +8,14 @@ confidence_score: 1.0
 parents: []
 spouse:
 - asiok_1
-children: []
+- rosita_sy_1
+children:
+- asioktuna_alex_5
+- edith_chua_sy
+- joann_4
+- may_ann_see
+- sharon_3
+- yvette_1
 siblings: []
 ---
 # Tuna Sy

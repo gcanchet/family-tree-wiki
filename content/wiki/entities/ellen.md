@@ -8,7 +8,8 @@ confidence_score: 1.0
 parents: []
 spouse:
 - angelo_ong_1
-children: []
+children:
+- aidan_ong
 siblings: []
 ---
 # Ellen

@@ -10,7 +10,8 @@ parents:
 - susan_ong_12
 spouse:
 - spencerwife
-children: []
+children:
+- specerson
 siblings: []
 ---
 # Spencer (2)

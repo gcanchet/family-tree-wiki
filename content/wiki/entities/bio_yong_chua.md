@@ -13,7 +13,9 @@ spouse:
 - kiat_ti_ong_2
 - pacita_teruel_lim_1
 - ema_clapano
-children: []
+children:
+- maria_lourdes_chua_3
+- mary_ann_chua_4
 siblings: []
 ---
 # Bio Yong Chua

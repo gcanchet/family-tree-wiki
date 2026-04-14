@@ -1,4 +1,5 @@
 ---
+title: Nathalia Yap
 tags: person
 generation_index: 6
 birth_date: null
@@ -6,16 +7,16 @@ location: null
 source_date: 2025-05-22
 confidence_score: 1.0
 parents:
-- richard
-- kim
+- ronald_yap
+- genalyn
 spouse: []
 children: []
 siblings: []
 ---
-# Riley
+# Nathalia Yap
 
 ## Genealogy
-- **Parents**: [[richard]], [[kim]]
+- **Parents**: [[ronald_yap|Ronald Yap]], [[genalyn|Genalyn]]
 
 ## Biographical Data
 Member of the sixth generation of the family.

@@ -8,7 +8,8 @@ confidence_score: 1.0
 parents: []
 spouse:
 - sohun2_ong_5
-children: []
+children:
+- irving_go
 siblings: []
 ---
 # Chinho Go

@@ -8,16 +8,16 @@ source_date: 2025-05-22
 confidence_score: 1.0
 parents: []
 spouse:
-- richard
+- richard_jason_uy
 children:
-- riley
 - rebecca_uy
+- riley_uy
 siblings: []
 ---
 # Kim Uy
 
 ## Genealogy
-- **Spouse**: [[richard]]
+- **Spouse**: [[richard_jason_uy|Richard Jason Uy]]
 - **Children**: [[riley|Riley]], [[rebecca_uy|Rebecca Uy]]
 
 ## Biographical Data

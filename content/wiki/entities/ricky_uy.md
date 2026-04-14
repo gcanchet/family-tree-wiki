@@ -8,15 +8,17 @@ source_date: 2025-05-22
 confidence_score: 1.0
 parents: []
 spouse:
-- victoria_chua_4
-children: []
+- victoria_uy_4
+children:
+- rex_vincent_uy
+- raissa_vinny_uy
 siblings: []
 ---
 # Ricky Uy
 
 ## Genealogy
-- **Spouse**: [[victoria_chua_4|Victoria Chua (4)]]
-- **Children**: [[ramon_uy|Ramon Yap]], [[vicky_boy|Rex]], [[vicky_girl|Raissa]]
+- **Spouse**: [[victoria_uy_4|Victoria Uy (4)]]
+- **Children**: [[rex_vincent_uy|Rex]], [[raissa_vinny_uy|Raissa]]
 
 ## Biographical Data
 Member of the third generation of the Uy family.

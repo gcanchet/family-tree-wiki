@@ -10,7 +10,8 @@ parents:
 - sioktin_tan
 spouse:
 - chinho_go
-children: []
+children:
+- irving_go
 siblings: []
 ---
 # Sohun2 Ong (5)

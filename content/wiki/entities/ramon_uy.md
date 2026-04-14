@@ -6,20 +6,22 @@ death_date: deceased
 location: null
 source_date: 2025-05-22
 confidence_score: 1.0
-parents:
-- ricky_uy
-- victoria_chua_4
+parents: []
 spouse:
 - cecilia_chua_5
-children: []
+- cecilia_yap_5
+children:
+- cherry_uy
+- aileen_yap
+- ronald_yap
 siblings: []
 ---
 # Ramon Yap
 
 ## Genealogy
-- **Parents**: [[ricky_uy|Ricky Uy]], [[victoria_chua_4|Victoria Chua (4)]]
+- **Parents**: []
 - **Spouse**: [[cecilia_chua_5|Cecilia Yap Chua (5)]]
-- **Children**: [[cherry|Cherry]], [[aileen|Aileen]], [[ronald|Ronald]]
+- **Children**: [[cherry_uy|Cherry Uy]], [[aileen_yap|Aileen Yap]], [[ronald_yap|Ronald Yap]]
 
 ## Biographical Data
 Member of the fourth generation. Deceased.

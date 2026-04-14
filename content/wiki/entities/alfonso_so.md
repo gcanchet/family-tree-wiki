@@ -8,7 +8,11 @@ confidence_score: 1.0
 parents: []
 spouse:
 - vivian_ong_1
-children: []
+children:
+- charmaine_so_2
+- iris_so_4
+- sherylyn_so_3
+- trisha_so_1
 siblings: []
 ---
 # Alfonso So

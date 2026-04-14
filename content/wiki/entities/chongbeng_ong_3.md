@@ -10,7 +10,11 @@ parents:
 - tsaiti_chua
 spouse:
 - lengsiok_ong
-children: []
+children:
+- albert_ong_2
+- clemente_ong_4
+- katherine_ong_3
+- vivian_ong_1
 siblings: []
 ---
 # Chongbeng Ong (3)

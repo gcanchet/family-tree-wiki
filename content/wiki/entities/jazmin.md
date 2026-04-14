@@ -9,7 +9,10 @@ confidence_score: 1.0
 parents: []
 spouse:
 - rodolfo_5
-children: []
+children:
+- ferdinand
+- james
+- theresa
 siblings: []
 ---
 # Jazmin

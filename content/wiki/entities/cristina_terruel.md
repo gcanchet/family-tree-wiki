@@ -8,7 +8,16 @@ confidence_score: 1.0
 parents: []
 spouse:
 - limpe
-children: []
+children:
+- apollonio_8
+- babyrose_4
+- candelaria_4
+- dominador_3
+- edwardo_toto_6
+- lilia_chua_2
+- nonoy_7
+- pacita_teruel_lim_1
+- rodolfo_5
 siblings: []
 ---
 # Cristina Terruel

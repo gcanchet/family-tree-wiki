@@ -8,7 +8,10 @@ confidence_score: 1.0
 parents: []
 spouse:
 - jeffrey_chua_6
-children: []
+children:
+- jeffrey1stchind
+- jeffrey3rdchild
+- tintin_chua
 siblings: []
 ---
 # Jeffreywife Chua

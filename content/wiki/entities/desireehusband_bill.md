@@ -8,7 +8,8 @@ confidence_score: 1.0
 parents: []
 spouse:
 - desiree
-children: []
+children:
+- james_2
 siblings: []
 ---
 # Desireehusband Bill

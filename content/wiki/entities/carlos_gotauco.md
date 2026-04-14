@@ -8,7 +8,10 @@ confidence_score: 1.0
 parents: []
 spouse:
 - sengti_ong_1
-children: []
+children:
+- baby_gotauco_1
+- charlie_gotauco_2
+- elvie_gotauco_3
 siblings: []
 ---
 # Carlos Gotauco

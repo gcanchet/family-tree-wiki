@@ -11,7 +11,9 @@ parents:
 - cristina_terruel
 spouse:
 - babyrose_husband
-children: []
+children:
+- rex
+- rose
 siblings: []
 ---
 # Babyrose (4)

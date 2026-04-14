@@ -11,7 +11,10 @@ parents:
 - cristina_terruel
 spouse:
 - jazmin
-children: []
+children:
+- ferdinand
+- james
+- theresa
 siblings: []
 ---
 # Rodolfo (5)

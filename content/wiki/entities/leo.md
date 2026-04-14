@@ -8,7 +8,10 @@ confidence_score: 1.0
 parents: []
 spouse:
 - corazon_7
-children: []
+- corazon_francisco_7
+children:
+- karl_adrian_2
+- ken_austin_francisco
 siblings: []
 ---
 # Leo

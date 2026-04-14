@@ -10,7 +10,9 @@ parents:
 - bienbien_chua
 spouse:
 - mega
-children: []
+children:
+- hannah_1
+- olivia_2
 siblings: []
 ---
 # Bernice Ong (2)

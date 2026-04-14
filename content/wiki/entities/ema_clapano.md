@@ -8,7 +8,9 @@ confidence_score: 1.0
 parents: []
 spouse:
 - biyo_yong_chua
-children: []
+- bio_yong_chua
+children:
+- elsie_chua
 siblings: []
 ---
 # Ema Clapano

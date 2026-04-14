@@ -1,6 +1,0 @@
----
-parents: []
-spouse: []
-children: []
-siblings: []
----

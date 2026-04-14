@@ -10,7 +10,10 @@ parents:
 - cristina_terruel
 spouse:
 - amy
-children: []
+children:
+- eduardo_jr
+- emelyn
+- myerriz_exel
 siblings: []
 ---
 # Edwardo Toto (6)

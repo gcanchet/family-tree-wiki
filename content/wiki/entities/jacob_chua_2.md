@@ -8,6 +8,7 @@ confidence_score: 1.0
 parents:
 - jonathan_chua_5
 - suzie
+- susie_gamba
 spouse: []
 children: []
 siblings: []

@@ -8,7 +8,8 @@ confidence_score: 1.0
 parents: []
 spouse:
 - rosanne_1
-children: []
+children:
+- madeleine_ongjuco
 siblings: []
 ---
 # Manuel Ongjuco

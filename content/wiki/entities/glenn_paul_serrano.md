@@ -9,7 +9,9 @@ confidence_score: 1.0
 parents: []
 spouse:
 - mary_joy_serrano_3
-children: []
+children:
+- genevieve_jean_marie_serrano
+- jennifer_gwen_marie_serrano
 siblings: []
 ---
 # Glenn Paul Serrano

@@ -8,7 +8,10 @@ confidence_score: 1.0
 parents: []
 spouse:
 - bunphok_ong_2
-children: []
+children:
+- alex2_ong_3
+- angelo_ong_1
+- bernice_ong_2
 siblings: []
 ---
 # Bienbien Chua

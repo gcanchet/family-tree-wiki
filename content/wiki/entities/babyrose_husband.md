@@ -9,7 +9,9 @@ confidence_score: 1.0
 parents: []
 spouse:
 - babyrose_4
-children: []
+children:
+- rex
+- rose
 siblings: []
 ---
 # Babyrose Husband

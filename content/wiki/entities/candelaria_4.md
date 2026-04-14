@@ -11,7 +11,9 @@ parents:
 - cristina_terruel
 spouse:
 - geofredo_so
-children: []
+children:
+- geofredo_so_jr
+- mannix
 siblings: []
 ---
 # Candelaria (4)

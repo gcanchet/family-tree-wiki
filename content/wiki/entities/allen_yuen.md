@@ -8,7 +8,9 @@ confidence_score: 1.0
 parents: []
 spouse:
 - susan_ong_12
-children: []
+children:
+- brian_1
+- spencer_2
 siblings: []
 ---
 # Allen Yuen

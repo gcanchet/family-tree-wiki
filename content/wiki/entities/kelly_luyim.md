@@ -8,7 +8,8 @@ confidence_score: 1.0
 parents: []
 spouse:
 - elvie_gotauco_3
-children: []
+children:
+- kay_gotauco
 siblings: []
 ---
 # Kelly Luyim

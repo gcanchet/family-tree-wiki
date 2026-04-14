@@ -8,7 +8,10 @@ confidence_score: 1.0
 parents: []
 spouse:
 - victor_gaw
-children: []
+children:
+- alan_gaw_1
+- andrew_gaw_2
+- kathleen_gaw_3
 siblings: []
 ---
 # Jean

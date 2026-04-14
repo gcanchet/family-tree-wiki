@@ -7,8 +7,8 @@ location: null
 source_date: 2025-05-22
 confidence_score: 1.0
 parents:
-- melvin
-- marivie
+- john_melvin_chua
+- mavie_chua
 spouse: []
 children: []
 siblings: []
@@ -16,7 +16,7 @@ siblings: []
 # Margaux Chua
 
 ## Genealogy
-- **Parents**: [[melvin|Melvin]], [[marivie|Marivie]]
+- **Parents**: [[john_melvin_chua|John Melvin Chua]], [[mavie_chua|Mavie Chua]]
 
 ## Biographical Data
 Member of the fifth generation of the family.

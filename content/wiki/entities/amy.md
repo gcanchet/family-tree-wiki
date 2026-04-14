@@ -8,7 +8,10 @@ confidence_score: 1.0
 parents: []
 spouse:
 - edwardo_toto_6
-children: []
+children:
+- eduardo_jr
+- emelyn
+- myerriz_exel
 siblings: []
 ---
 # Amy

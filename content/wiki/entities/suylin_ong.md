@@ -9,7 +9,20 @@ parents: []
 spouse:
 - tsaiti_chua
 - sioktin_tan
-children: []
+children:
+- bunphok_ong_2
+- chongbeng_ong_3
+- huayteng_ong_4
+- khenglim_ong_6
+- kiat_ti_ong_2
+- saku_ong
+- sengti_ong_1
+- sohua_ong_5
+- sohun2_ong_5
+- sohun_ong_1
+- sokheng_ong_3
+- sotuan_ong_11
+- susan_ong_12
 siblings: []
 ---
 # Suylin Ong

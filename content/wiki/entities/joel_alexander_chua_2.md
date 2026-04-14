@@ -11,9 +11,11 @@ parents:
 - lilia_chua_2
 spouse:
 - renee
+- renee_chua
 children:
 - sean
 - erin_chua
+- sean_chua
 siblings: []
 ---
 # Joel Alexander Chua (2)

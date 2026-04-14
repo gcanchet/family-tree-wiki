@@ -8,7 +8,11 @@ confidence_score: 1.0
 parents: []
 spouse:
 - suylin_ong
-children: []
+children:
+- chongbeng_ong_3
+- huayteng_ong_4
+- kiat_ti_ong_2
+- sengti_ong_1
 siblings: []
 ---
 # Tsaiti Chua

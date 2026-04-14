@@ -10,7 +10,9 @@ parents:
 - sioktin_tan
 spouse:
 - allen_yuen
-children: []
+children:
+- brian_1
+- spencer_2
 siblings: []
 ---
 # Susan Ong (12)

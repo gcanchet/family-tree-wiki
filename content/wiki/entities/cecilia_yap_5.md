@@ -14,7 +14,7 @@ spouse:
 children:
 - cherry_uy
 - aileen_yap
-- ronald
+- ronald_yap
 siblings: []
 ---
 # Cecilia Yap (5)
@@ -22,7 +22,7 @@ siblings: []
 ## Genealogy
 - **Parents**: [[huy_chua|Huy Chua]], [[hok_sy|Hok Sy]]
 - **Spouse**: [[ramon_uy|Ramon Yap]]
-- **Children**: [[cherry_uy|Cherry Uy]], [[aileen_yap|Aileen Yap]], [[ronald|Ronald]]
+- **Children**: [[cherry_uy|Cherry Uy]], [[aileen_yap|Aileen Yap]], [[ronald_yap|Ronald Yap]]
 
 ## Biographical Data
 Member of the third generation of the Huy Chua branch. Maiden name is **Chua**.

@@ -10,7 +10,11 @@ parents:
 - hok_sy
 spouse:
 - rafael_lim
-children: []
+children:
+- cheche_3
+- regan_4
+- riza_2
+- rosanne_1
 siblings: []
 ---
 # Julia Lim (3)

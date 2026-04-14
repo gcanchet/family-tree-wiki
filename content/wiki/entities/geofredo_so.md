@@ -8,7 +8,9 @@ confidence_score: 1.0
 parents: []
 spouse:
 - candelaria_4
-children: []
+children:
+- geofredo_so_jr
+- mannix
 siblings: []
 ---
 # Geofredo So

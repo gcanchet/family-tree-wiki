@@ -8,6 +8,7 @@ confidence_score: 1.0
 parents:
 - asiok_1
 - tuna_sy
+- rosita_sy_1
 spouse: []
 children: []
 siblings: []

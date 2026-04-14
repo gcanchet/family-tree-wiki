@@ -10,7 +10,8 @@ parents:
 - po_cu
 spouse:
 - tbd_gaw
-children: []
+children:
+- victor_gaw
 siblings: []
 ---
 # Koa

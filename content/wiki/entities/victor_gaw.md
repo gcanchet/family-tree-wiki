@@ -10,7 +10,10 @@ parents:
 - koa
 spouse:
 - jean
-children: []
+children:
+- alan_gaw_1
+- andrew_gaw_2
+- kathleen_gaw_3
 siblings: []
 ---
 # Victor Gaw

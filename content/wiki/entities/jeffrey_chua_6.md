@@ -10,7 +10,10 @@ parents:
 - pacita_terruel_lim_1
 spouse:
 - jeffreywife_chua
-children: []
+children:
+- jeffrey1stchind
+- jeffrey3rdchild
+- tintin_chua
 siblings:
 - hong_bee_chua_2
 - james_chua_1

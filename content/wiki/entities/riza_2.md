@@ -10,7 +10,9 @@ parents:
 - julia_3
 spouse:
 - joel_allen_dy
-children: []
+children:
+- alaira_reese_dy
+- jaylen_randall_dy
 siblings: []
 ---
 # Riza Dy (2)

@@ -10,7 +10,12 @@ parents:
 - julia_3
 spouse:
 - pamela_ingrid_lim
-children: []
+children:
+- alexa_rielle_lim
+- imari_rafaielle_lim
+- juliana_ryanne_lim
+- rania_nicole_lim
+- ryden_isaac_lim
 siblings: []
 ---
 # Reagan Lim (4)

@@ -8,7 +8,16 @@ confidence_score: 1.0
 parents: []
 spouse:
 - suylin_ong
-children: []
+children:
+- bunphok_ong_2
+- khenglim_ong_6
+- saku_ong
+- sohua_ong_5
+- sohun2_ong_5
+- sohun_ong_1
+- sokheng_ong_3
+- sotuan_ong_11
+- susan_ong_12
 siblings: []
 ---
 # Sioktin Tan

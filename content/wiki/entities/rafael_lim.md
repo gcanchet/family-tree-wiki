@@ -8,7 +8,11 @@ confidence_score: 1.0
 parents: []
 spouse:
 - julia_3
-children: []
+children:
+- cheche_3
+- regan_4
+- riza_2
+- rosanne_1
 siblings: []
 ---
 # Rafael Lim

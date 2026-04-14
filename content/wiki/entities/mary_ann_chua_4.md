@@ -10,7 +10,11 @@ parents:
 - pacita_teruel_lim_1
 spouse:
 - wilbert_tan
-children: []
+children:
+- karlene_tan
+- kashlee_tan
+- kathlene_tan
+- kaylene_tan
 siblings:
 - hong_bee_chua_2
 - james_chua_1

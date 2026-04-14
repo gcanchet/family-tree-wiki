@@ -10,7 +10,8 @@ parents:
 - sengti_ong_1
 spouse:
 - kelly_luyim
-children: []
+children:
+- kay_gotauco
 siblings: []
 ---
 # Elvie Gotauco (3)

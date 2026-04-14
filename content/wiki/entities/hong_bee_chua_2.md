@@ -8,8 +8,11 @@ confidence_score: 1.0
 parents:
 - biyo_yong_chua
 - kiat_ti_ong_2
-spouse: []
-children: []
+spouse:
+- vivencio_ancheta
+children:
+- great_ancheta_1
+- lord_ancheta_2
 siblings:
 - james_chua_1
 - jeffrey_chua_6

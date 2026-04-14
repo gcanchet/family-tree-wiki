@@ -2,10 +2,11 @@ import os
 import re
 import json
 import yaml
+from pathlib import Path
 
-VAULT_ROOT = r"c:\Users\Great\AI\obsidian\my vault"
-ENTITIES_DIR = os.path.join(VAULT_ROOT, "wiki", "entities")
-OUTPUT_JSON = os.path.join(VAULT_ROOT, "wiki", "outputs", "family_data.json")
+VAULT_ROOT = Path(r"c:\Users\Great\AI\obsidian\my vault")
+ENTITIES_DIR = VAULT_ROOT / "wiki" / "entities"
+OUTPUT_JSON = VAULT_ROOT / "wiki" / "outputs" / "family_data.json"
 
 def get_clean_id(link, name_map=None):
     """Extracts the entity ID from an Obsidian internal link."""
@@ -31,18 +32,20 @@ def find_links_in_text(text, label):
 
 def process_vault():
     family_data = {}
-    name_to_id = {} # Maps titles and slugified names to actual file IDs
+    name_to_id = {} 
+    entities_cache = {} # Temporary storage for bidirectional processing
     
     if not os.path.exists(ENTITIES_DIR):
         print(f"Error: Directory {ENTITIES_DIR} not found.")
         return
 
     # --- Pass 1: Build Name Map ---
-    for filename in os.listdir(ENTITIES_DIR):
-        if not filename.endswith(".md"): continue
-        entity_id = filename[:-3]
-        filepath = os.path.join(ENTITIES_DIR, filename)
-        
+    for filepath in ENTITIES_DIR.glob("*.md"):
+        entity_id = filepath.stem
+
+        if filepath.stat().st_size == 0:
+            continue
+
         name_to_id[entity_id.lower()] = entity_id
         with open(filepath, 'r', encoding='utf-8') as f:
             content = f.read()
@@ -55,11 +58,8 @@ def process_vault():
                 except: pass
 
     # --- Pass 2: Process Relationships ---
-    for filename in os.listdir(ENTITIES_DIR):
-        if not filename.endswith(".md"):
-            continue
-        
-        filepath = os.path.join(ENTITIES_DIR, filename)
+    for filepath in ENTITIES_DIR.glob("*.md"):
+        entity_id = filepath.stem
         with open(filepath, 'r', encoding='utf-8') as f:
             content = f.read()
 
@@ -78,7 +78,7 @@ def process_vault():
         if not isinstance(fm, dict):
             continue
 
-        entity_id = filename[:-3]
+        entity_id = filepath.stem
         
         # Extract relationships (Check FM first, fallback to Body)
         relationships = {}
@@ -92,7 +92,7 @@ def process_vault():
         
         for key, labels in mapping:
             # Get existing list from frontmatter
-            existing = fm.get(key, [])
+            existing = fm.get(key) or []
             if isinstance(existing, str): existing = [existing]
             
             # Clean existing links
@@ -107,34 +107,56 @@ def process_vault():
             relationships[key] = list(set(cleaned)) # De-duplicate
             fm[key] = cleaned # Update FM for standardization
         
-        # Write back standardized Markdown
+        # Cache entity data for bidirectional pass before writing
+        entities_cache[entity_id] = {'fm': fm, 'body': body, 'path': filepath}
+
+    # --- Orphan & Stub Detection ---
+    isolated_entities = []
+    empty_stubs = []
+
+    for eid, data in entities_cache.items():
+        fm = data['fm']
+        body = data['body'].strip()
+        total_rels = sum(len(fm.get(k, [])) for k in ['parents', 'spouse', 'children', 'siblings'])
+        
+        if total_rels == 0:
+            isolated_entities.append(eid)
+        if not body and not fm.get('title'):
+            empty_stubs.append(eid)
+
+    # --- Bidirectional Integrity Pass ---
+    def ensure_link(source_id, target_id, rel_key):
+        if target_id in entities_cache:
+            target_fm = entities_cache[target_id]['fm']
+            if rel_key not in target_fm: target_fm[rel_key] = []
+            if not isinstance(target_fm[rel_key], list): target_fm[rel_key] = [target_fm[rel_key]]
+            if source_id not in target_fm[rel_key]:
+                target_fm[rel_key].append(source_id)
+
+    for eid, data in entities_cache.items():
+        fm = data['fm']
+        for p_id in fm.get('parents', []): ensure_link(eid, p_id, 'children')
+        for c_id in fm.get('children', []): ensure_link(eid, c_id, 'parents')
+        for s_id in fm.get('spouse', []): ensure_link(eid, s_id, 'spouse')
+        for sib_id in fm.get('siblings', []): ensure_link(eid, sib_id, 'siblings')
+
+    # --- Final Write Back & JSON Generation ---
+    for eid, data in entities_cache.items():
+        fm, body, filepath = data['fm'], data['body'], data['path']
+        
+        # Standardize Markdown file
         standardized_fm = yaml.dump(fm, sort_keys=False, allow_unicode=True).strip()
         with open(filepath, 'w', encoding='utf-8') as f:
             f.write(f"---\n{standardized_fm}\n---\n{body}")
 
-        family_data[entity_id] = {
-            "name": fm.get('title', entity_id.replace('_', ' ').title()),
-            **relationships
+        # Update family_data for JSON output
+        family_data[eid] = {
+            "name": fm.get('title', eid.replace('_', ' ').title()),
+            "parents": fm.get('parents', []),
+            "spouse": fm.get('spouse', []),
+            "children": fm.get('children', []),
+            "siblings": fm.get('siblings', [])
         }
-
-    # --- Bidirectional Integrity Pass ---
-    # Ensures that if A is parent of B, B is automatically child of A in the JSON
-    for eid in list(family_data.keys()):
-        # Parents <-> Children
-        for p_id in family_data[eid]['parents']:
-            if p_id in family_data and eid not in family_data[p_id]['children']:
-                family_data[p_id]['children'].append(eid)
-        for c_id in family_data[eid]['children']:
-            if c_id in family_data and eid not in family_data[c_id]['parents']:
-                family_data[c_id]['parents'].append(eid)
-        # Spouse <-> Spouse
-        for s_id in family_data[eid]['spouse']:
-            if s_id in family_data and eid not in family_data[s_id]['spouse']:
-                family_data[s_id]['spouse'].append(eid)
-        # Sibling <-> Sibling
-        for sib_id in family_data[eid]['siblings']:
-            if sib_id in family_data and eid not in family_data[sib_id]['siblings']:
-                family_data[sib_id]['siblings'].append(eid)
 
     # Create output directory if missing
     os.makedirs(os.path.dirname(OUTPUT_JSON), exist_ok=True)
@@ -142,6 +164,11 @@ def process_vault():
         json.dump(family_data, f, indent=4)
     
     print(f"Success: Standardized {len(family_data)} files and generated family_data.json")
+    
+    if isolated_entities:
+        print(f"Found {len(isolated_entities)} Isolated Entities (No relationships): {', '.join(isolated_entities)}")
+    if empty_stubs:
+        print(f"Found {len(empty_stubs)} Empty Stubs: {', '.join(empty_stubs)}")
 
 if __name__ == "__main__":
     process_vault()

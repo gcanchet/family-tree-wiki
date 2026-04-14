@@ -10,7 +10,8 @@ parents:
 - julia_3
 spouse:
 - manuel_ongjuco
-children: []
+children:
+- madeleine_ongjuco
 siblings: []
 ---
 # Rosanne Ongjuco

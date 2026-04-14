@@ -8,7 +8,8 @@ confidence_score: 1.0
 parents: []
 spouse:
 - lord_ancheta_2
-children: []
+children:
+- alexandra_ancheta
 siblings: []
 ---
 # Aksana Kalinich

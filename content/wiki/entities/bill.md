@@ -8,7 +8,8 @@ confidence_score: 1.0
 parents: []
 spouse:
 - katherine_ong_3
-children: []
+children:
+- desiree
 siblings: []
 ---
 # Bill

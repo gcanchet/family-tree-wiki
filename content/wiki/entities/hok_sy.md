@@ -8,7 +8,18 @@ confidence_score: 1.0
 parents: []
 spouse:
 - huy_chua
-children: []
+children:
+- carmen_chua_4
+- cecilia_yap_5
+- corazon_francisco_7
+- jose_chua_2
+- julia_3
+- lorenzo
+- paul_6
+- rosita_sy_1
+- victoria_chua_4
+- paul_chua_6
+- victoria_uy_4
 siblings: []
 ---
 # Hok Sy

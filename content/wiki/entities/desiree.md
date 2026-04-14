@@ -10,7 +10,8 @@ parents:
 - katherine_ong_3
 spouse:
 - desireehusband_bill
-children: []
+children:
+- james_2
 siblings: []
 ---
 # Desiree

@@ -10,7 +10,8 @@ parents:
 - lengsiok_ong
 spouse:
 - bill
-children: []
+children:
+- desiree
 siblings: []
 ---
 # Katherine Ong (3)

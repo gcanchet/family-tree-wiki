@@ -1,5 +1,5 @@
 ---
-title: Richard
+title: Richard Jason Uy
 tags: person
 generation_index: 5
 birth_date: null
@@ -12,16 +12,17 @@ parents:
 spouse:
 - kim_uy
 children:
-- riley
+- riley_uy
 - rebecca_uy
-siblings: []
+siblings:
+- ralph_justin_uy
 ---
-# Richard
+# Richard Jason Uy
 
 ## Genealogy
 - **Parents**: [[mary_jane_uy_1|Mary Jane Uy (1)]], [[robert_ang|Robert Ang]]
 - **Spouse**: [[kim_uy|Kim Uy]]
-- **Children**: [[riley|Riley]], [[rebecca_uy|Rebecca Uy]]
+- **Children**: [[riley_uy|Riley]], [[rebecca_uy|Rebecca Uy]]
 
 ## Biographical Data
-Member of the fifth generation of the family.
+Member of the fifth generation of the family. Formerly identified by the ID richard.

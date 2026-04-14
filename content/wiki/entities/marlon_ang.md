@@ -8,7 +8,10 @@ confidence_score: 1.0
 parents: []
 spouse:
 - sharon_3
-children: []
+children:
+- samantha_ashley_ang
+- sean_aiden_ang
+- sofia_ailison_ang
 siblings: []
 ---
 # Marlon Ang

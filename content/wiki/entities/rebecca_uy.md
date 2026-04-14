@@ -7,7 +7,7 @@ location: null
 source_date: 2025-05-22
 confidence_score: 1.0
 parents:
-- richard
+- richard_jason_uy
 - kim_uy
 spouse: []
 children: []
@@ -16,7 +16,7 @@ siblings: []
 # Rebecca Uy
 
 ## Genealogy
-- **Parents**: [[richard]], [[kim_uy|Kim Uy]]
+- **Parents**: [[richard_jason_uy|Richard Jason Uy]], [[kim_uy|Kim Uy]]
 
 ## Biographical Data
 Member of the sixth generation of the family. Also known as **Becca**.
