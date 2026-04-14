@@ -1,21 +1,22 @@
 ---
+title: Carmen Chua (4)
 tags: person
-generation_index: 4
+generation_index: 3
 birth_date: null
 location: null
 source_date: 2025-05-22
 confidence_score: 1.0
 parents:
-- rosita_sy_1
-- tuna_sy
+- huy_chua
+- hok_sy
 spouse: []
 children: []
 siblings: []
 ---
-# Asioktuna Alex (5)
+# Carmen Chua (4)
 
 ## Genealogy
-- **Parents**: [[rosita_sy_1|Rosita Sy (1)]], [[tuna_sy]]
+- **Parents**: [[huy_chua]], [[hok_sy]]
 
 ## Biographical Data
-Member of the fourth generation of the family.
+Member of the third generation of the Huy Chua branch.

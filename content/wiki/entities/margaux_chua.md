@@ -1,4 +1,5 @@
 ---
+title: Margaux Chua
 tags: person
 generation_index: 5
 birth_date: null
@@ -6,16 +7,16 @@ location: null
 source_date: 2025-05-22
 confidence_score: 1.0
 parents:
-- mary_joy_serrano_3
-- glenn_paul_serrano
+- melvin
+- marivie
 spouse: []
 children: []
 siblings: []
 ---
-# Jennifer Gwen Marie Serrano
+# Margaux Chua
 
 ## Genealogy
-- **Parents**: [[mary_joy_serrano_3|Mary Joy Serrano (3)]], [[glenn_paul_serrano|Glenn Paul Serrano]]
+- **Parents**: [[melvin|Melvin]], [[marivie|Marivie]]
 
 ## Biographical Data
 Member of the fifth generation of the family.

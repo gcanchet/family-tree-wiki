@@ -15,7 +15,7 @@ siblings: []
 
 ## Genealogy
 - **Spouse**: [[corazon_7]]
-- **Children**: [[ken_austin]], [[karl_adrian_2]]
+- **Children**: [[ken_austin_francisco|Ken Austin Francisco]], [[karl_adrian_2]]
 
 ## Biographical Data
 Member of the third generation, married to Corazon (7).

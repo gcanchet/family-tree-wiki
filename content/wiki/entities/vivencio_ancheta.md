@@ -1,4 +1,5 @@
 ---
+title: Vivencio Ancheta
 tags: person
 generation_index: 2
 birth_date: null
@@ -8,7 +9,9 @@ confidence_score: 1.0
 parents: []
 spouse:
 - hong_bee_chua_2
-children: []
+children:
+- great_ancheta_1
+- lord_ancheta_2
 siblings: []
 ---
 # Vivencio Ancheta

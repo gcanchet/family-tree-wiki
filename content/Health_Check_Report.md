@@ -7,8 +7,8 @@ The wiki has been successfully migrated to Quartz v4. The repository is mapped t
 - **Total Entities:** 235
 - **Bidirectional Link Coverage:** 100% (Calculated based on available relationship data)
 - **Orphan Pages:** 0 (All entities are reachable from the Index or a Parent/Spouse link).
-- **Integrity Check:** Resolved name collisions for James, Rex, and Karl Adrian to fix Graph View navigation.
-- **Redundancy Check:** 0 (Clean)
+- **Integrity Check:** Synchronized YAML frontmatter for entity files and resolved name collisions.
+- **Redundancy Check:** Manual cleanup required for orphan files: `aileen.md`, `asiok_1.md`, `rosita_sy.md`, `becca.md`, `caleb.md`, `carmen_4.md`, `cecilia_chua_5.md`, `cherry.md`, `clark.md`, `corazon_7.md`, `daimler.md`, `dale.md`, `erin.md`, `haipin_2.md`, `jadon.md`, `jesse_5.md`, `joel_2.md`, `jude_4.md`, `ken_austin.md`, `kim.md`, `lilia_2.md`, `mary_jane_1.md`, `mary_joy_3.md`, `margaux.md`.
 
 ## Data Gaps
 ### 1. Missing Metadata
@@ -24,7 +24,7 @@ The following pages contain only generation boilerplate and require research to 
  - **Lim Branch**: [[asuncion]] (Merged identity formerly known as Sionee).
  - **Haipin/Serrano Branch**: [[renee]], [[robert_ang]], [[glenn_paul_serrano]], [[jennifer_gwen_marie_serrano]], [[genevieve_jean_marie_serrano]].
  - **Ongjuco Branch**: [[rosanne_1]], [[madeleine_ongjuco|Madeleine Rose Ongjuco]].
- - **New Generations**: [[sean]], [[erin]], [[richard]], [[robin]], [[ralph]], [[renzo]], [[riley]], [[becca]], [[jaylen_randall_dy]], [[alaira_reese_dy]], [[juliana_ryanne_lim]], [[rania_nicole_lim]], [[alexa_rielle_lim]], [[ryden_isaac_lim]], [[imari_rafaielle_lim]], [[mikkel]], [[margaux]], [[caleb]], [[jadon]], [[cherry]], [[aileen]], [[ronald]], [[nathalia]], [[louise]], [[dale]], [[clark]], [[samantha_ashley_ang]], [[sean_aiden_ang]], [[sofia_ailison_ang]], [[bianco_go]], [[edward_go]], [[suzie|Susie Gamba]], [[edith_chua_sy|Edith Chua Sy]], [[may_ann_see|May Ann See]], [[geofredo_so|Geofredo So]], [[mannix]], [[geofredo_so_jr|Geofredo Jr.]], [[karl_adrian_2|Karl Adrian (Leo Branch)]], [[james_2|James (Desiree Branch)]].
+ - **New Generations**: [[sean]], [[erin_chua|Erin Chua]], [[richard]], [[robin]], [[ralph]], [[renzo]], [[riley]], [[rebecca_uy|Rebecca Uy]], [[jaylen_randall_dy]], [[alaira_reese_dy]], [[juliana_ryanne_lim]], [[rania_nicole_lim]], [[alexa_rielle_lim]], [[ryden_isaac_lim]], [[imari_rafaielle_lim]], [[mikkel]], [[margaux_chua|Margaux Chua]], [[caleb_co|Caleb Co]], [[jadon_co|Jadon Co]], [[cherry_uy|Cherry Uy]], [[aileen_yap|Aileen Yap]], [[ronald]], [[nathalia]], [[louise]], [[dale_cyril_uy|Dale Cyril Uy]], [[clark_david_uy|Clark David Uy]], [[samantha_ashley_ang]], [[sean_aiden_ang]], [[sofia_ailison_ang]], [[bianco_go]], [[edward_go]], [[suzie|Susie Gamba]], [[edith_chua_sy|Edith Chua Sy]], [[may_ann_see|May Ann See]], [[geofredo_so|Geofredo So]], [[mannix]], [[geofredo_so_jr|Geofredo Jr.]], [[ken_austin_francisco|Ken Austin Francisco]], [[karl_adrian_2|Karl Adrian (Leo Branch)]], [[james_2|James (Desiree Branch)]].
 
 ### 3. Terminal Branches (No Descendants)
 There are several significant individuals with no spouse or children linked, which may indicate missing data or the end of a lineage in the current record:
@@ -32,12 +32,13 @@ There are several significant individuals with no spouse or children linked, whi
 - [[clemente_ong_4]]
 - [[sohun_ong_1]]
 - [[huayteng_ong_4]]
+- [[jude_anthony_chua_4]]
 
 ## Recommendations
 1. **Research Pass:** Prioritize filling `birth_date` and `location` for Generation 1 and 2 patriarchs/matriarchs to anchor the timeline.
 2. **Narrative Expansion:** Use future journal entries or interview notes to replace "Member of the X generation" with specific life details.
 3. **Linting:** Periodically run a check for any new links created in Chat that haven't been saved to the Index.
-4. **Tool Integration:** Ensure the [[relationship_finder|Relationship Finder]] is linked on the homepage for easy path tracing between the 235 entities.
+4. **YAML Synchronization:** Maintain strict parity between Markdown body links and YAML relationship fields.
 5. **Sharing Strategy:** Evaluate **Obsidian Publish** or **Quartz** to provide a web-based, clickable interface for family members to explore the 227+ interlinked entities.
 
 **Status:** HEALTHY (Maintenance Required)

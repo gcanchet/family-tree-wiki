@@ -1,4 +1,5 @@
 ---
+title: Jadon Co
 tags: person
 generation_index: 5
 birth_date: null
@@ -6,16 +7,16 @@ location: null
 source_date: 2025-05-22
 confidence_score: 1.0
 parents:
-- mary_joy_serrano_3
-- glenn_paul_serrano
+- phoebe
+- daimler_co
 spouse: []
 children: []
 siblings: []
 ---
-# Jennifer Gwen Marie Serrano
+# Jadon Co
 
 ## Genealogy
-- **Parents**: [[mary_joy_serrano_3|Mary Joy Serrano (3)]], [[glenn_paul_serrano|Glenn Paul Serrano]]
+- **Parents**: [[phoebe|Phoebe]], [[daimler_co|Daimler Co]]
 
 ## Biographical Data
 Member of the fifth generation of the family.

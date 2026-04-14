@@ -1,21 +1,6 @@
 ---
-tags: person
-generation_index: 5
-birth_date: null
-location: null
-source_date: 2025-05-22
-confidence_score: 1.0
 parents: []
-spouse:
-- richard
+spouse: []
 children: []
 siblings: []
 ---
-# Kim
-
-## Genealogy
-- **Spouse**: [[richard]]
-- **Children**: [[riley]], [[becca]]
-
-## Biographical Data
-Married into the family as the spouse of Richard.

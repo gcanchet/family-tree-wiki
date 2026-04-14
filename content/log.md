@@ -204,3 +204,18 @@
 ## [2026-04-11] system | Added relationship-guide.md to provide user documentation for navigating the family tree and understanding relationships.
 ## [2026-04-11] lint | Renamed Biyo Yong Chua to Bio Yong Chua across the wiki for accuracy.
 ## [2026-04-11] lint | Renamed Pacita Terruel Lim (1) to Pacita Teruel Lim (1) and updated all relationship links.
+## [2026-04-11] lint | Synchronized YAML metadata for Vivencio Ancheta and Ong branches; corrected legacy Biyo/Bio references.
+## [2026-04-11] lint | Refreshed Health_Check_Report.md with current structural metrics.
+## [2026-04-11] system | Created maintenance_prompts.md to provide a standardized list of prompts for future wiki operations.
+## [2026-04-11] lint | Renamed Aileen to Aileen Yap and updated relevant metadata.
+## [2026-04-11] lint | Updated Wiki Index: Resolved Aileen Yap ripple effects, removed duplicate Rachelle Lim (3), and corrected filename-based sorting.
+## [2026-04-11] lint | Identified `aileen.md` as an orphan artifact post-rename; flagged for manual filesystem deletion.
+## [2026-04-11] system | Updated maintenance_prompts.md: Expanded Prompt #1 to explicitly include Index and Ripple Effect instructions.
+## [2026-04-11] lint | Renamed Asiok (1) to Rosita Sy and applied ripple effects to index and metadata.
+## [2026-04-11] lint | Corrected Rosita Sy to Rosita Sy (1) and updated all family relationship links.
+## [2026-04-11] lint | Renamed Becca to Rebecca Uy, Caleb to Caleb Co, and Carmen (4) to Carmen Chua (4); applied ripple effects.
+## [2026-04-11] lint | Renamed Cecilia Yap Chua (5) to Cecilia Yap (5) and updated parent links for Aileen Yap.
+## [2026-04-11] lint | Batch rename: Cherry, Clark, Corazon, Daimler, Dale, and Erin updated to full names with corresponding ripple effects across the wiki.
+## [2026-04-11] lint | Batch rename: Haipin (2) to Jose Chua (2), Jadon to Jadon Co, and the Haipin siblings (Jesse, Joel, Jude) to full names; applied ripple effects.
+## [2026-04-11] lint | Batch rename: Ken Austin, Kim, Lilia (2), Mary Jane (1), Mary Joy (3), and Margaux updated to full names; applied ripple effects to indices and branch relationships.
+## [2026-04-11] lint | Corrected relationship: Marivie is married to Melvin, not Jude Anthony Chua (4). Updated Jude, Mikkel, and Margaux records.

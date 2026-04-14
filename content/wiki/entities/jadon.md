@@ -1,22 +1,6 @@
 ---
-title: Jadon
-tags: person
-generation_index: 5
-birth_date: null
-location: null
-source_date: 2025-05-22
-confidence_score: 1.0
-parents:
-- phoebe
-- daimler
+parents: []
 spouse: []
 children: []
 siblings: []
 ---
-# Jadon
-
-## Genealogy
-- **Parents**: [[phoebe|Phoebe]], [[daimler|Daimler]]
-
-## Biographical Data
-Member of the fifth generation of the family.

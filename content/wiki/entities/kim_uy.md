@@ -1,27 +1,24 @@
 ---
-title: Richard
+title: Kim Uy
 tags: person
 generation_index: 5
 birth_date: null
 location: null
 source_date: 2025-05-22
 confidence_score: 1.0
-parents:
-- mary_jane_uy_1
-- robert_ang
+parents: []
 spouse:
-- kim_uy
+- richard
 children:
 - riley
 - rebecca_uy
 siblings: []
 ---
-# Richard
+# Kim Uy
 
 ## Genealogy
-- **Parents**: [[mary_jane_uy_1|Mary Jane Uy (1)]], [[robert_ang|Robert Ang]]
-- **Spouse**: [[kim_uy|Kim Uy]]
+- **Spouse**: [[richard]]
 - **Children**: [[riley|Riley]], [[rebecca_uy|Rebecca Uy]]
 
 ## Biographical Data
-Member of the fifth generation of the family.
+Married into the family as the spouse of Richard.
