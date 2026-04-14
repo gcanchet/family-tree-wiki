@@ -8,9 +8,11 @@ confidence_score: 1.0
 parents: []
 spouse:
 - riza_2
+- rizza_dy_2
 children:
 - alaira_reese_dy
 - jaylen_randall_dy
+- alaina_reese_dy
 siblings: []
 ---
 # Joel Allen Dy

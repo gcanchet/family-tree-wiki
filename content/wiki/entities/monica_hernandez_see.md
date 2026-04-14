@@ -1,22 +1,21 @@
 ---
+title: Monica Hernandez See
 tags: person
 generation_index: 4
 birth_date: null
 location: null
 source_date: 2025-05-22
 confidence_score: 1.0
-parents:
-- asiok_1
-- tuna_sy
-- rosita_sy_1
-spouse: []
+parents: []
+spouse:
+- alex_see_5
 children: []
 siblings: []
 ---
-# Joann (4)
+# Monica Hernandez See
 
 ## Genealogy
-- **Parents**: [[asiok_1]], [[tuna_sy]]
+- **Spouse**: [[alex_see_5|Alex See (5)]]
 
 ## Biographical Data
-Member of the fourth generation of the family.
+Married into the family as the spouse of Alex See (5).

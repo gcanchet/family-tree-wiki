@@ -1,4 +1,5 @@
 ---
+title: Sofia Allison Ang
 tags: person
 generation_index: 5
 birth_date: null
@@ -12,10 +13,10 @@ spouse: []
 children: []
 siblings: []
 ---
-# Sofia Ailison Ang
+# Sofia Allison Ang
 
 ## Genealogy
 - **Parents**: [[sharon_3|Sharon See (3)]], [[marlon_ang|Marlon Ang]]
 
 ## Biographical Data
-Member of the fifth generation of the family.
+Member of the fifth generation of the family. Formerly identified as Sofia Ailison Ang.

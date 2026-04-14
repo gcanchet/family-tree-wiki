@@ -6,16 +6,17 @@ location: null
 source_date: 2025-05-22
 confidence_score: 1.0
 parents:
-- asiok_1
-- tuna_sy
+- rosita_sy_1
+- see_tun
 spouse: []
 children: []
-siblings: []
+siblings:
+- alex_see_5
 ---
 # May Ann See
 
 ## Genealogy
-- **Parents**: [[asiok_1|Asiok (1)]], [[tuna_sy|Tuna Sy]]
+- **Parents**: [[rosita_sy_1|Rosita Sy (1)]], [[see_tun|See Tun]]
 
 ## Biographical Data
 Member of the fourth generation of the family.

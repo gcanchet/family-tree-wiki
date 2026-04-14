@@ -1,4 +1,5 @@
 ---
+title: Rizza Dy (2)
 tags: person
 generation_index: 4
 birth_date: null
@@ -11,16 +12,16 @@ parents:
 spouse:
 - joel_allen_dy
 children:
-- alaira_reese_dy
+- alaina_reese_dy
 - jaylen_randall_dy
 siblings: []
 ---
-# Riza Dy (2)
+# Rizza Dy (2)
 
 ## Genealogy
 - **Parents**: [[rafael_lim|Rafael Lim]], [[julia_3|Julia Lim (3)]]
 - **Spouse**: [[joel_allen_dy]]
-- **Children**: [[jaylen_randall_dy]], [[alaira_reese_dy]]
+- **Children**: [[jaylen_randall_dy]], [[alaina_reese_dy]]
 
 ## Biographical Data
-Member of the fourth generation of the Lim family, married into the Dy family.
+Member of the fourth generation of the Lim family, married into the Dy family. Formerly identified as Riza Dy (2).

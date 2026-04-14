@@ -8,6 +8,7 @@ confidence_score: 1.0
 parents:
 - riza_2
 - joel_allen_dy
+- rizza_dy_2
 spouse: []
 children: []
 siblings: []

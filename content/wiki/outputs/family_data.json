@@ -30,10 +30,10 @@
         ],
         "siblings": []
     },
-    "alaira_reese_dy": {
-        "name": "Alaira Reese Dy",
+    "alaina_reese_dy": {
+        "name": "Alaina Reese Dy",
         "parents": [
-            "riza_2",
+            "rizza_dy_2",
             "joel_allen_dy"
         ],
         "spouse": [],
@@ -101,6 +101,24 @@
         "spouse": [],
         "children": [],
         "siblings": []
+    },
+    "alex_see_5": {
+        "name": "Alex See (5)",
+        "parents": [
+            "see_tun",
+            "rosita_sy_1"
+        ],
+        "spouse": [
+            "monica_hernandez_see"
+        ],
+        "children": [],
+        "siblings": [
+            "yvette_1",
+            "sharon_3",
+            "joanne_see_4",
+            "edith_chua_sy",
+            "may_ann_see"
+        ]
     },
     "alfonso_so": {
         "name": "Alfonso So",
@@ -702,11 +720,14 @@
         "name": "Edith Chua Sy",
         "parents": [
             "asiok_1",
-            "tuna_sy"
+            "tuna_sy",
+            "see_tun"
         ],
         "spouse": [],
         "children": [],
-        "siblings": []
+        "siblings": [
+            "alex_see_5"
+        ]
     },
     "eduardo_jr": {
         "name": "Eduardo Jr",
@@ -1213,7 +1234,8 @@
         "name": "Jaylen Randall Dy",
         "parents": [
             "riza_2",
-            "joel_allen_dy"
+            "joel_allen_dy",
+            "rizza_dy_2"
         ],
         "spouse": [],
         "children": [],
@@ -1371,16 +1393,17 @@
         "children": [],
         "siblings": []
     },
-    "joann_4": {
-        "name": "Joann 4",
+    "joanne_see_4": {
+        "name": "Joanne See (4)",
         "parents": [
-            "asiok_1",
-            "tuna_sy",
-            "rosita_sy_1"
+            "rosita_sy_1",
+            "see_tun"
         ],
         "spouse": [],
         "children": [],
-        "siblings": []
+        "siblings": [
+            "alex_see_5"
+        ]
     },
     "joel_alexander_chua_2": {
         "name": "Joel Alexander Chua (2)",
@@ -1403,11 +1426,13 @@
         "name": "Joel Allen Dy",
         "parents": [],
         "spouse": [
-            "riza_2"
+            "riza_2",
+            "rizza_dy_2"
         ],
         "children": [
             "alaira_reese_dy",
-            "jaylen_randall_dy"
+            "jaylen_randall_dy",
+            "alaina_reese_dy"
         ],
         "siblings": []
     },
@@ -1526,7 +1551,8 @@
             "cheche_3",
             "regan_4",
             "riza_2",
-            "rosanne_1"
+            "rosanne_1",
+            "rizza_dy_2"
         ],
         "siblings": []
     },
@@ -1927,7 +1953,8 @@
         "children": [
             "samantha_ashley_ang",
             "sean_aiden_ang",
-            "sofia_ailison_ang"
+            "sofia_ailison_ang",
+            "sofia_allison_ang"
         ],
         "siblings": []
     },
@@ -2008,12 +2035,14 @@
     "may_ann_see": {
         "name": "May Ann See",
         "parents": [
-            "asiok_1",
-            "tuna_sy"
+            "rosita_sy_1",
+            "see_tun"
         ],
         "spouse": [],
         "children": [],
-        "siblings": []
+        "siblings": [
+            "alex_see_5"
+        ]
     },
     "mega": {
         "name": "Mega",
@@ -2034,6 +2063,15 @@
             "mavie_chua"
         ],
         "spouse": [],
+        "children": [],
+        "siblings": []
+    },
+    "monica_hernandez_see": {
+        "name": "Monica Hernandez See",
+        "parents": [],
+        "spouse": [
+            "alex_see_5"
+        ],
         "children": [],
         "siblings": []
     },
@@ -2182,7 +2220,7 @@
         "children": [
             "cheche_3",
             "regan_4",
-            "riza_2",
+            "rizza_dy_2",
             "rosanne_1"
         ],
         "siblings": []
@@ -2346,8 +2384,8 @@
         "children": [],
         "siblings": []
     },
-    "riza_2": {
-        "name": "Riza 2",
+    "rizza_dy_2": {
+        "name": "Rizza Dy (2)",
         "parents": [
             "rafael_lim",
             "julia_3"
@@ -2356,7 +2394,7 @@
             "joel_allen_dy"
         ],
         "children": [
-            "alaira_reese_dy",
+            "alaina_reese_dy",
             "jaylen_randall_dy"
         ],
         "siblings": []
@@ -2491,13 +2529,15 @@
             "hok_sy"
         ],
         "spouse": [
-            "tuna_sy"
+            "see_tun"
         ],
         "children": [
             "yvette_1",
             "sharon_3",
-            "joann_4",
-            "asioktuna_alex_5"
+            "joanne_see_4",
+            "alex_see_5",
+            "asioktuna_alex_5",
+            "may_ann_see"
         ],
         "siblings": []
     },
@@ -2551,6 +2591,22 @@
         "children": [],
         "siblings": []
     },
+    "see_tun": {
+        "name": "See Tun",
+        "parents": [],
+        "spouse": [
+            "rosita_sy_1"
+        ],
+        "children": [
+            "alex_see_5",
+            "edith_chua_sy",
+            "joanne_see_4",
+            "may_ann_see",
+            "sharon_3",
+            "yvette_1"
+        ],
+        "siblings": []
+    },
     "sengti_ong_1": {
         "name": "Sengti Ong 1",
         "parents": [
@@ -2571,7 +2627,7 @@
         "name": "Sharon 3",
         "parents": [
             "rosita_sy_1",
-            "tuna_sy"
+            "see_tun"
         ],
         "spouse": [
             "marlon_ang"
@@ -2579,9 +2635,11 @@
         "children": [
             "samantha_ashley_ang",
             "sean_aiden_ang",
-            "sofia_ailison_ang"
+            "sofia_allison_ang"
         ],
-        "siblings": []
+        "siblings": [
+            "alex_see_5"
+        ]
     },
     "sheryl": {
         "name": "Sheryl",
@@ -2622,8 +2680,8 @@
         ],
         "siblings": []
     },
-    "sofia_ailison_ang": {
-        "name": "Sofia Ailison Ang",
+    "sofia_allison_ang": {
+        "name": "Sofia Allison Ang",
         "parents": [
             "sharon_3",
             "marlon_ang"
@@ -2859,23 +2917,6 @@
         "children": [],
         "siblings": []
     },
-    "tuna_sy": {
-        "name": "Tuna Sy",
-        "parents": [],
-        "spouse": [
-            "asiok_1",
-            "rosita_sy_1"
-        ],
-        "children": [
-            "asioktuna_alex_5",
-            "edith_chua_sy",
-            "joann_4",
-            "may_ann_see",
-            "sharon_3",
-            "yvette_1"
-        ],
-        "siblings": []
-    },
     "victoria_uy_4": {
         "name": "Victoria Uy (4)",
         "parents": [
@@ -2953,12 +2994,13 @@
     "yvette_1": {
         "name": "Yvette 1",
         "parents": [
-            "asiok_1",
-            "tuna_sy",
+            "see_tun",
             "rosita_sy_1"
         ],
         "spouse": [],
         "children": [],
-        "siblings": []
+        "siblings": [
+            "alex_see_5"
+        ]
     }
 }

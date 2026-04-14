@@ -104,8 +104,8 @@ def process_vault():
                     found = find_links_in_text(body, lbl)
                     cleaned.extend([get_clean_id(f"[[{f}]]", name_to_id) for f in found])
             
-            relationships[key] = list(set(cleaned)) # De-duplicate
-            fm[key] = cleaned # Update FM for standardization
+            relationships[key] = list(dict.fromkeys(cleaned)) # De-duplicate while preserving order
+            fm[key] = relationships[key] # Update FM for standardization
         
         # Cache entity data for bidirectional pass before writing
         entities_cache[entity_id] = {'fm': fm, 'body': body, 'path': filepath}
