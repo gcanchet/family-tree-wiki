@@ -7,7 +7,7 @@ The wiki has been successfully migrated to Quartz v4. The repository is mapped t
 - **Total Entities:** 235
 - **Bidirectional Link Coverage:** 100% (Calculated based on available relationship data)
 - **Orphan Pages:** 0 (All entities are reachable from the Index or a Parent/Spouse link).
-- **Integrity Check:** Synchronized YAML frontmatter for entity files and resolved name collisions.
+- **Integrity Check:** Resolved parentage contradiction: reassigned Bianco and Edward Go to Monica Hernandez See from Monica Uy.
 - **Redundancy Check:** Manual cleanup required for orphan files: `mary_jane_1.md`, `mary_joy_3.md`, `vicky_girl.md`, `richard.md`, `riley.md`, `robin.md`, `ronald.md`, `sean.md`, `victoria_chua_4.md`, `suzie.md`, `melvin.md`, `marivie.md`, `sofia_ailison_ang.md`, `joann_4.md`.
 
 ## Data Gaps

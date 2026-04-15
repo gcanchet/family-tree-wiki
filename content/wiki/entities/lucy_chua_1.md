@@ -6,7 +6,7 @@ location: null
 source_date: 2025-05-22
 confidence_score: 1.0
 parents:
-- biyo_yong_chua
+- bio_yong_chua
 - kiat_ti_ong_2
 spouse: []
 children: []

@@ -268,6 +268,21 @@
 ## [2026-04-11] ingest | Generated missing entity file for Alex See (5) and refactored ID from asioktuna_alex_5 (Ripple Effect).
 ## [2026-04-11] ingest | Created new entity for Monica Hernandez See and linked as spouse to Alex See (5) (Ripple Effect).
 ## [2026-04-11] lint | Refactored Tuna Sy to See Tun; applied ripple effects to index and parent links (Ripple Effect).
+## [2026-04-11] lint | Parentage Correction: Removed children Bianco and Edward Go from Monica Uy.
+## [2026-04-11] lint | Parentage Correction: Reassigned Bianco and Edward Go to Monica Hernandez See.
+## [2026-04-11] lint | Ripple Effect: Synchronized bidirectional links for Monica branches and updated source metadata.
+## [2026-04-11] lint | Parentage Correction: Updated Alex See (5) to include children Bianco and Edward Go.
+## [2026-04-11] lint | Parentage Correction: Synchronized Bianco Go's parent links to Alex See (5) and Monica Hernandez See.
+## [2026-04-11] lint | Parentage Correction: Synchronized Edward Go's parent links to Alex See (5) and Monica Hernandez See.
 ## [2026-04-11] lint | Corrected Sofia Ailison Ang spelling to Sofia Allison Ang; refactored ID and updated parent links (Ripple Effect).
 ## [2026-04-11] lint | Refactored joann_4.md to joanne_see_4.md and updated all relationship links (Ripple Effect).
 ## [2026-04-11] lint | Finalized Ripple Effect: Updated placeholder links across all branches and deleted redundant orphan files (paul_6, rosalin, renzo).
+## [2026-04-11] lint | Parentage Correction: Removed children Bianco and Edward Go from Robin Jervis Uy and updated source metadata.
+## [2026-04-11] lint | Parentage Correction: Synchronized Edith Chua Sy parent links to See Tun and Rosita Sy (1).
+## [2026-04-11] lint | Parentage Correction: Synchronized May Ann See parent and sibling links; updated source metadata.
+## [2026-04-11] lint | Ripple Effect: Standardized sibling lists and source dates for the See branch (Alex, Edith, May Ann, Bianco, Edward).
+## [2026-04-11] lint | Formatting: Applied 'title' frontmatter to missing See branch entities and standardized Robin Jervis Uy biographical section.
+## [2026-04-11] ui | Welcome.md: Formatted email address as a clickable mailto link.
+## [2026-04-11] lint | Parentage Correction: Synchronized YAML children list for Bio Yong Chua and Pacita Teruel Lim (1).
+## [2026-04-11] lint | Parentage Correction: Synchronized children list for Rosita Sy (1) and removed legacy placeholder ID.
+## [2026-04-11] lint | Ripple Effect: Updated parents of Elsie Chua, Lucy Chua (1), and Rose Marie Chua (2) to use Bio Yong Chua (refactored ID).

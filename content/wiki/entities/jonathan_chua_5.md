@@ -8,6 +8,8 @@ confidence_score: 1.0
 parents:
 - biyo_yong_chua
 - pacita_terruel_lim_1
+- bio_yong_chua
+- pacita_teruel_lim_1
 spouse:
 - susie_gamba
 children:

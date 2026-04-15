@@ -12,8 +12,13 @@ parents:
 spouse:
 - bio_yong_chua
 children:
-- maria_lourdes_chua_3
+- james_chua_1
+- jeffrey_chua_6
+- jonathan_chua_5
+- rose_marie_chua_2
 - mary_ann_chua_4
+- maria_lourdes_chua_3
+- jerome_chua
 siblings: []
 ---
 # Pacita Teruel Lim (1)

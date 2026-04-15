@@ -8,6 +8,7 @@ confidence_score: 1.0
 parents:
 - biyo_yong_chua
 - kiat_ti_ong_2
+- bio_yong_chua
 spouse: []
 children: []
 siblings:
